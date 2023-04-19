@@ -5,7 +5,7 @@ const dogBdd = async () => {
     include: [
       {
         model: Race,
-        attributes: ["nameRaza", "tamanioPromedio", "imagenRaza"],
+        attributes: ["id","nameRaza", "tamanioPromedio", "imagenRaza"],
         through: {
           attributes: [],
         },

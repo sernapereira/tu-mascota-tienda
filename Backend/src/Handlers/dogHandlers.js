@@ -1,4 +1,12 @@
-const { createDog, allDogController } = require("../controller/dogController");
+const {
+  createDog,
+  allDogController,
+  dogByIdController,
+  updateDogController,
+  deletDogController,
+} = require("../controller/dogController");
+
+////////////////////////////////////////////
 
 const getDogHandlers = async (req, res) => {
   try {
@@ -10,9 +18,20 @@ const getDogHandlers = async (req, res) => {
   }
 };
 
-const getDogByIdHandler = (req, res) => {
-  res.end("by id");
+/////////////////////////////////////////
+
+const getDogByIdHandler = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const dog = await dogByIdController(id);
+    res.status(200).json(dog);
+  } catch (error) {
+    console.log({ error: error.message });
+    res.status(400).json({ error: error.message });
+  }
 };
+
+///////////////////////////////////////
 
 const postDogHandler = async (req, res) => {
   try {
@@ -43,14 +62,55 @@ const postDogHandler = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
-  
-const putDogHandler = (req, res) => {
-  res.end("actualizar put");
+
+/////////////////////////////////////////
+
+const putDogHandler = async (req, res) => {
+  try {
+    const {
+      id,
+      name,
+      edad,
+      color,
+      genero,
+      image,
+      nameRaza,
+      tamanioPromedio,
+      imagenRaza,
+    } = req.body;
+    const putdog = await updateDogController(
+      id,
+      name,
+      edad,
+      color,
+      genero,
+      image,
+      nameRaza,
+      tamanioPromedio,
+      imagenRaza
+    );
+
+    res.status(200).json(putdog);
+  } catch (error) {
+    console.log({ error: error.message });
+    res.status(400).json({ error: error.message });
+  }
 };
 
-const deletDogHandler = (req, res) => {
-  res.end("borrar delet");
+////////////////////////////////////////
+
+const deletDogHandler = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const borrado = await deletDogController(id);
+    res.status(200).json(borrado);
+  } catch (error) {
+    console.log({ error: error.message });
+    res.status(400).json({ error: error.message });
+  }
 };
+
+///////////////////////////////////////
 
 module.exports = {
   getDogHandlers,

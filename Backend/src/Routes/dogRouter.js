@@ -13,6 +13,6 @@ dogRouter.get("/", getDogHandlers);
 dogRouter.get("/:id", getDogByIdHandler);
 dogRouter.post("/", postDogHandler);
 dogRouter.put("/", putDogHandler);
-dogRouter.delete("/", deletDogHandler);
+dogRouter.delete("/:id", deletDogHandler);
 
 module.exports = dogRouter;
