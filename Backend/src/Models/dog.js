@@ -26,6 +26,10 @@ module.exports = (sequelize) => {
         type: DataTypes.ENUM("macho", "hembra"),
         allowNull: false,
       },
+      imagen: {
+        type: DataTypes.ARRAY(DataTypes.JSON),
+        allowNull: false,
+      },
     },
     {
       timestamps: false,

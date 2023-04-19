@@ -10,12 +10,16 @@ module.exports = (sequelize) => {
         primaryKey: true,
         allowNull: false,
       },
-      name: {
+      nameRaza: {
         type: DataTypes.STRING,
         allowNull: false,
       },
       tamanioPromedio: {
         type: DataTypes.ENUM("mini", "pequenias", "medianas", "grande"),
+        allowNull: false,
+      },
+      imagenRaza: {
+        type: DataTypes.ARRAY(DataTypes.JSON),
         allowNull: false,
       },
     },

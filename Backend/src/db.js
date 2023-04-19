@@ -1,7 +1,7 @@
-const { Sequelize, DataTypes } = require("sequelize");
 require("dotenv").config();
-const dogModel = require("./Models/dog");
-const raceModel = require("./Models/race");
+const fs = require("fs");
+const path = require("path");
+const { Sequelize, Op } = require("sequelize");
 
 const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
 
@@ -13,14 +13,37 @@ const sequelize = new Sequelize(
   }
 );
 
-const { dog, race } = sequelize.models;
+//devuelve el nombre del archivo sin la ruta completa
+const basename = path.basename(__filename);
 
-race.hasMany(dog);
-dog.belongsTo(race);
+const modelDefiners = [];
 
+//cargar en el array modelDefiner todos los modelos de Sequelize definidos en archivos js que estan almacenados en "models"
+fs.readdirSync(path.join(__dirname, "/models"))
+  .filter(
+    (file) =>
+      file.indexOf(".") !== 0 && file !== basename && file.slice(-3) === ".js"
+  )
+  .forEach((file) => {
+    modelDefiners.push(require(path.join(__dirname, "/models", file)));
+  });
 
+//carga todos los modelos de sequelize
+modelDefiners.forEach((model) => model(sequelize));
 
-dogModel(sequelize);
-raceModel(sequelize);
+//Capitaliza todos los modelos
+let entries = Object.entries(sequelize.models);
+let capsEntries = entries.map((entry) => [
+  entry[0][0].toUpperCase() + entry[0].slice(1),
+  entry[1],
+]);
+sequelize.models = Object.fromEntries(capsEntries);
 
-module.exports = { sequelize };
+//Accedo a los modelos haciendo destructuring
+
+const { Dog, Race } = sequelize.models;
+
+Race.belongsToMany(Dog, { through: "Race_Dog" });
+Dog.belongsToMany(Race, { through: "Dog_Race" });
+
+module.exports = { ...sequelize.models, sequelize };
