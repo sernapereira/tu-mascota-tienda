@@ -101,21 +101,29 @@ const updateDogController = async (
 
 ////////////////////////////////////////////////
 
-const deletDogController = async(id) => {
-    await Dog.destroy({
-        where: {
-          id: id
-        },
-        force: true
-      });
+const deletDogController = async (id) => {
+  const borrado = await dogByIdController(id);
 
-    return await dogByIdController(id)
-}
+  await Dog.destroy({
+    where: {
+      id: id,
+    },
+    force: true,
+  });
 
+  await Race.destroy({
+    where: {
+      id: id,
+    },
+    force: true,
+  });
+  
+  return ["Producto Borrado", borrado];
+};
 module.exports = {
   createDog,
   allDogController,
   dogByIdController,
   updateDogController,
-  deletDogController
+  deletDogController,
 };
