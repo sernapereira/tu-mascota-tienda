@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* outline: 2px solid red;    */
+  font-family: "Open Sans", sans-serif;
+}
+
+:root {
+  --color-primario: #080707;
+  --color-secundario: #f9954e;
+  --color-neutro: #e7dfd9;
+  --color-aux: #7c4c24;
+  --color-contraste: #f9954ebb;
+  --box-shadow: 0 0 45px rgba(0, 0, 0, 0.5);
+  --color-imagen: linear-gradient(360deg, #f9954e6e 50%, #f9954e6c 50%);
+}
+
+.nav {
+  display: flex;
+  background-image: var(--color-imagen), url(../../../public/nav2.jpg);
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  box-shadow: var(--box-shadow);
+  flex-direction: row-reverse;
+  background-size: cover;
+}
+
+.nav2 {
+  display: flex;
+  background-image: var(--color-imagen), url(../../../public/nav_landing.jpg);
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  box-shadow: var(--box-shadow);
+  flex-direction: row-reverse;
+  background-size: cover;
+}
+
+.nav__img {
+  width: 230px;
+}
+
+.nav__logo {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  text-decoration: none;
+  color: var(--color-primario);
+}
+
+.nav__copy {
+  font-size: 10px;
+}
+
+.nav__botton {
+  background-color: var(--color-contraste);
+  padding: 15px 30px;
+  color: var(--color-primario);
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.nav__admin {
+  background-color: var(--color-secundario);
+  padding: 15px 30px;
+  color: var(--color-primario);
+  text-decoration: none;
+  border-radius: 10px;
+}
