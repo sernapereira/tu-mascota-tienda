@@ -1,16 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  dog: [],
+  dogs: [],
   dogDetail: [],
 };
 
 export const dogSlice = createSlice({
-  name: "dog",
+  name: "dogs",
   initialState,
   reducers: {
     getDog: (state, action) => {
-      state.dog = action.payload;
+      state.dogs = action.payload;
     },
     getDogById: (state, action) => {
       state.dogDetail = action.payload;

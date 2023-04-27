@@ -3,23 +3,24 @@ import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../../component/navbar/navbar";
 import style from "./Home.module.css";
 import { getAllDog } from "../../redux/Actions/dogActions";
+import Cards from "../../component/Cards/Cards";
+
 
 
 
 const Home = () => {
-  
-  const dispatch = useDispatch()
-  const allDog = useSelector((state) => state.dog) 
+  const dispatch = useDispatch();
+  const { dogs } = useSelector((state) => state.dogs);
 
-  useEffect(()=>{
-    dispatch(getAllDog()) 
-  },[])
+ 
+  useEffect(() => {
+    dispatch(getAllDog());
+  }, []);
 
   return (
     <div className={style.container}>
       <Navbar />
-
-      <div></div>
+      <Cards />
     </div>
   );
 };

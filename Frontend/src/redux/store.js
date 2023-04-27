@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import dogSlice from "./slice/dogSlice";
+import dogs from "./slice/dogSlice";
 
 const store = configureStore({
   reducer: {
-    dogSlice: dogSlice,
+    dogs: dogs,
   },
 });
 
