@@ -4,7 +4,7 @@ const { hashPassword, comparePassword } = require("./encristado");
 
 const createUser = async (name, password, admin) => {
   const hashedPassword = await hashPassword(password);
-  console.log(hashedPassword);
+
   await Users.create({
     name,
     password: hashedPassword,
@@ -36,11 +36,13 @@ const userByIdController = async (id) => {
 /////////////////////////////////////////
 
 const updateUserController = async (id, name, password, admin) => {
+  const hashedPassword = await hashPassword(password);
+
   await Users.update(
     {
       id,
       name,
-      password,
+      password: hashedPassword,
       admin,
     },
     {
@@ -70,11 +72,13 @@ const deletUserController = async (id) => {
 
 /////////////////////////////////////
 
-const inicioSeccion = async (username, userPassword) => {
-  const userClient = await Users.findOne({ username });
+const inicioSeccionController = async (username, userPassword) => {
+  const userClient = await Users.findOne({ where: { name: username } });
+
+
 
   if (!userClient) {
-    return new Error({ error: "usuarios no encontrado" }, { codigo: 400 });
+    return ({ error: "usuarios no encontrado",codigo: 400  });
   }
 
   const isMatch = await comparePassword(userPassword, userClient.password);
@@ -92,5 +96,5 @@ module.exports = {
   userByIdController,
   updateUserController,
   deletUserController,
-  inicioSeccion,
+  inicioSeccionController,
 };
