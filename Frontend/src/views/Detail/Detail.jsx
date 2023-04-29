@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import style from "./Detail.module.css";
 import { getDogByIdAction } from "../../redux/Actions/dogActions";
+import Navbar from "../../component/navbar/navbar";
 
 const Detail = () => {
   const [position, setPosition] = useState(0);
@@ -32,39 +33,44 @@ const Detail = () => {
 
   return (
     <div className={style.container}>
+     
       <div className={style.detail}>
         <div className={style.detail__listaImg}>
-          <button
-            onClick={(e) => handlerPrev(e)}
-            className={style.detail__prev}
-          >
-            <img
-              src="../../../public/avance-rapido.png"
-              alt=""
-              className={style.detail__flecha_prev}
-            />
-          </button>
-          <div className={style.detail__figure}>
-            {displayedImages?.map((dog, index) => {
-              return (
-                <div key={index} className={style.detail__figure_img}>
-                  <img
-                    src={dog.image}
-                    alt=""
-                    className={style.detail__img}
-                    key={index}
-                  />
-                </div>
-              );
-            })}
+          {displayedImages?.map((dog, index) => {
+            return (
+              <div key={index} className={style.detail__figure_img}>
+                <img
+                  src={dog.image}
+                  alt=""
+                  className={style.detail__img}
+                  key={index}
+                />
+              </div>
+            );
+          })}
+
+          <div className={style.detail__botom}>
+            <button
+              onClick={(e) => handlerPrev(e)}
+              className={style.detail__prev}
+            >
+              <img
+                src="../../../public/avance-rapido.png"
+                alt=""
+                className={style.detail__flecha_prev}
+              />
+            </button>
+            <button
+              onClick={(e) => handleNext(e)}
+              className={style.detail__prev}
+            >
+              <img
+                src="../../../public/avance-rapido.png"
+                alt=""
+                className={style.detail__flecha_next}
+              />
+            </button>
           </div>
-          <button onClick={(e) => handleNext(e)} className={style.detail__prev}>
-            <img
-              src="../../../public/avance-rapido.png"
-              alt=""
-              className={style.detail__flecha_next}
-            />
-          </button>
         </div>
 
         <div className={style.detail__texts}>

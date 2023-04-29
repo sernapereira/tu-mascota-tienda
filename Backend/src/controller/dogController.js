@@ -3,16 +3,7 @@ const { Dog, Race } = require("../db");
 
 //////////////////////////////////////
 
-const createDog = async (
-  name,
-  edad,
-  color,
-  genero,
-  imagen,
-  nameRaza,
-  tamanioPromedio,
-  imagenRaza
-) => {
+const createDog = async (name, edad, color, genero, imagen) => {
   const create = await Dog.create({
     name,
     edad,
@@ -20,14 +11,6 @@ const createDog = async (
     genero,
     imagen,
   });
-
-  const createRaza = await Race.create({
-    nameRaza,
-    tamanioPromedio,
-    imagenRaza,
-  });
-
-  create.addRace(createRaza);
 
   return { message: "Producto Creado Con Extio 🐶" };
 };
@@ -117,7 +100,7 @@ const deletDogController = async (id) => {
     },
     force: true,
   });
-  
+
   return ["Producto Borrado", borrado];
 };
 module.exports = {

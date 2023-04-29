@@ -41,7 +41,7 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 //Accedo a los modelos haciendo destructuring
 
-const { Dog, Race } = sequelize.models;
+const { Dog, Race, Users } = sequelize.models;
 
 Race.belongsToMany(Dog, { through: "Race_Dog" });
 Dog.belongsToMany(Race, { through: "Dog_Race" });

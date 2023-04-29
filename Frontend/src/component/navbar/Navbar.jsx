@@ -2,8 +2,14 @@
 import style from "./Navbar.module.css";
 
 const Navbar = () => {
+
+  if(window.location.pathname === "/admin"){
+    return
+  }
+
   return (
-    <div className={style.container}>
+   
+   <div className={style.container}>
       <nav className={ window.location.pathname === "/home" ? style.nav : style.nav2 } >
         {window.location.pathname === "/" ? (
           <a href="/home" className={style.nav__botton}>
