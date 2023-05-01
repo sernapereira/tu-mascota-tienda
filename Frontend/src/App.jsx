@@ -4,7 +4,10 @@ import Landing from "./views/Landing/Landing";
 import { Route, Routes } from "react-router-dom";
 import Detail from "./views/Detail/Detail";
 import Navbar from "./component/navbar/navbar";
-import Admin from "./views/Admin/admin";
+
+import InicioForm from "./views/Admin/InicioForm/InicioForm";
+
+
 
 function App() {
   return (
@@ -14,8 +17,8 @@ function App() {
         <Route exact path="/home" element={<Home />} />
         <Route exact path="/" element={<Landing />} />
         <Route exact path="/detail/:id" element={<Detail />} />
-
-        <Route exact path="/admin" element={<Admin />} />
+    
+        <Route exact path="/admin" element={<InicioForm />} />
       </Routes>
     </div>
   );

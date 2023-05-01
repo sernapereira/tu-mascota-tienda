@@ -43,6 +43,7 @@ input {
   margin: 20px;
   padding: 5px;
   width: 90%;
+  outline: none;
 }
 
 .form__inputNombre{
@@ -72,4 +73,11 @@ input {
     border-radius: 10px;
     border: none;
     background-color: rgba(39, 125, 196, 0.737);
+}
+
+.form__boton2{
+  padding: 10px 70px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(39, 196, 57, 0.737);
 }
