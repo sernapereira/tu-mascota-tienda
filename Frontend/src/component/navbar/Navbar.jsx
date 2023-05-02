@@ -3,7 +3,7 @@ import style from "./Navbar.module.css";
 
 const Navbar = () => {
 
-  if(window.location.pathname === "/admin"){
+  if(window.location.pathname.includes("admin") ){
     return
   }
 
