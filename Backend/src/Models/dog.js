@@ -15,7 +15,7 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
       edad: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
       },
       color: {
@@ -27,7 +27,7 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
       imagen: {
-        type: DataTypes.ARRAY(DataTypes.JSON),
+        type: DataTypes.TEXT,
         allowNull: false,
       },
     },

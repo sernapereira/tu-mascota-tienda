@@ -48,7 +48,9 @@ const updateDogController = async (
   tamanioPromedio,
   imagenRaza
 ) => {
+ 
   const race = await Race.findByPk(id);
+  
 
   await Dog.update(
     {

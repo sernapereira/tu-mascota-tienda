@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   dogs: [],
   dogDetail: [],
+  post: [],
 };
 
 export const dogSlice = createSlice({
@@ -15,8 +16,11 @@ export const dogSlice = createSlice({
     getDogById: (state, action) => {
       state.dogDetail = action.payload;
     },
+    postDog: (state, action) => {
+      state.post = action.payload;
+    },
   },
 });
 
-export const { getDog, getDogById } = dogSlice.actions;
+export const { getDog, getDogById, postDog } = dogSlice.actions;
 export default dogSlice.reducer;
