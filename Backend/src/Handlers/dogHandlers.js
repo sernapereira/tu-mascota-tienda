@@ -5,7 +5,6 @@ const {
   updateDogController,
   deletDogController,
 } = require("../controller/dogController");
-const postImagen = require("../data/subidaDeImagen");
 
 ////////////////////////////////////////////
 
@@ -47,14 +46,14 @@ const postDogHandler = async (req, res) => {
       imagenRaza,
     } = req.body;
 
-    const image = postImagen(imagen);
+    console.log(imagen);
 
     const newDog = await createDog(
       name,
       edad,
       color,
       genero,
-      image,
+      imagen,
       nameRaza,
       tamanioPromedio,
       imagenRaza

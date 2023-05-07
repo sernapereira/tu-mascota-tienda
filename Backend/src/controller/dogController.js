@@ -4,6 +4,7 @@ const { Dog, Race } = require("../db");
 //////////////////////////////////////
 
 const createDog = async (name, edad, color, genero, imagen) => {
+  console.log(name);
   const create = await Dog.create({
     name,
     edad,
@@ -48,9 +49,7 @@ const updateDogController = async (
   tamanioPromedio,
   imagenRaza
 ) => {
- 
   const race = await Race.findByPk(id);
-  
 
   await Dog.update(
     {

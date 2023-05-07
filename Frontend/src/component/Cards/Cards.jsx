@@ -8,18 +8,19 @@ const Cards = () => {
   return (
     <div className={style.container}>
       {dogs?.map((dog, index) => {
-
         return (
-          <Card
-            key={index}
-            id={dog.id}
-            name={dog.name}
-            edad={dog.edad}
-            color={dog.color}
-            genero={dog.genero}
-            imagen={[dog.imagen]}
-            raza={[dog.rece]}
-          />
+          <div className={style.cards__card}>
+            <Card
+              key={index}
+              id={dog.id}
+              name={dog.name}
+              edad={dog.edad}
+              color={dog.color}
+              genero={dog.genero}
+              imagen={dog.imagen}
+              raza={[dog.rece]}
+            />
+          </div>
         );
       })}
     </div>
@@ -27,4 +28,3 @@ const Cards = () => {
 };
 
 export default Cards;
-

@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Bilbo&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cards__card {
+  overflow: hidden;
+  margin: 30px;
+  padding: 20px;
+  width: 20%;
+  height: 60%;
+  align-items: center;
+
+  /* border-radius: 10px; */
+  border: 1px solid #ff6a0091;
+
+  --color-secundario: #ff6a0031;
+
+  background-color: var(--color-secundario);
+  background-repeat: no-repeat;
+  background-position: top;
+
+  font-family: "Bilbo", cursive;
+  font-size: 25px;
+}
+
+

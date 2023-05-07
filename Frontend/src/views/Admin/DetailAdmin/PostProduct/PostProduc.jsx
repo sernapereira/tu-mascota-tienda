@@ -9,7 +9,6 @@ let cache = {};
 let uploadImage = async (file) => {
   try {
     if (cache.imag === file) {
-      console.log("el url es:" + img.secure_url);
       return img.secure_url;
     }
     cache.imag = file;
@@ -17,11 +16,11 @@ let uploadImage = async (file) => {
     let data = new FormData();
 
     data.append("file", file);
-    data.append("upload_preset", "image");
-    data.append("api_key", "612353432275849");
+    data.append("upload_preset", "folderNuevo");
+    data.append("api_key", "477634988216349");
 
     const res = await fetch(
-      "https://api.cloudinary.com/v1_1/dkw9ck7qv/image/upload",
+      "https://api.cloudinary.com/v1_1/dwuywmhrq/image/upload",
       {
         method: "POST",
         body: data,
@@ -29,8 +28,6 @@ let uploadImage = async (file) => {
     );
 
     let img = await res.json();
-
-    console.log(img.secure_url);
 
     return img.secure_url;
   } catch (error) {
@@ -40,17 +37,17 @@ let uploadImage = async (file) => {
 
 //////////////////////////////////////////
 
+const initialForm = {
+  name: "",
+  edad: "",
+  color: "",
+  genero: "",
+  imagen: [],
+};
+
 const PostProduct = () => {
   const dispatch = useDispatch();
-  const [form, setForm] = useState({
-    name: "",
-    edad: "",
-    color: "",
-    genero: "",
-    imagen: [],
-  });
-
-  const [archivo, setArchivo] = useState(null);
+  const [form, setForm] = useState(initialForm);
 
   //////////////////////////////////////////
 
@@ -65,25 +62,25 @@ const PostProduct = () => {
 
   const manejarCambioArchivo = async (evento) => {
     const file = evento.target.files[0];
-
-    let imageUrl = await uploadImage(file);
-    // const formData = new FormData();
-    // formData.append('image', file);
-    setArchivo(imageUrl);
+    let image = await uploadImage(file);
+    setForm({
+      ...form,
+      imagen: [...form.imagen, { image }],
+    });
   };
 
-  console.log("Estado >>>> ", archivo);
   /////////////////////////////////////////
-
-  const subirArchivo = (event) => {
-    event.preventDefault();
-    setForm({ ...form, imagen: [...form.imagen, archivo] });
-  };
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
-
-    // dispatch(postDogAction(form));
+    dispatch(postDogAction(form));
+    setForm({
+      name: "",
+      edad: "",
+      color: "",
+      genero: "",
+      imagen: [],
+    });
   };
 
   return (
@@ -128,14 +125,18 @@ const PostProduct = () => {
         </div>
         <div>
           <figure className={style.form__figure}>
-            <img src={archivo} className={style.form__img} />
+            {form.imagen
+              ? form.imagen.map((el, index) => (
+                  <img src={el.image} className={style.form__img} key={index} />
+                ))
+              : null}
           </figure>
           <input
             type="file"
             placeholder="Imagen"
             onChange={(e) => manejarCambioArchivo(e)}
           />
-          <button onClick={(e) => subirArchivo(e)}>Subir imagen</button>
+          {/* <button onClick={(e) => subirArchivo(e)}>Subir imagen</button> */}
         </div>
       </form>
       <div>

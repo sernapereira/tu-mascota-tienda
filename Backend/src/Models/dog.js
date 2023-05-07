@@ -27,7 +27,7 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
       imagen: {
-        type: DataTypes.TEXT,
+        type: DataTypes.ARRAY(DataTypes.JSON),
         allowNull: false,
       },
     },

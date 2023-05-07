@@ -13,23 +13,26 @@ body {
 
 :root {
   --color-primario: #080707;
-  --color-secundario: #f9954e;
+  --color-secundario: #ea6200ec;
   --color-neutro: #e7dfd9;
   --color-aux: #7c4c24;
   --color-contraste: #f9954ebb;
   --box-shadow: 0 0 45px rgba(0, 0, 0, 0.5);
-  --color-imagen: linear-gradient(360deg, #f9954e6e 50%, #f9954e6c 50%);
+  --color-imagen: linear-gradient(360deg, #a1430082 0%,rgb(255, 111, 0) 100%);
 }
 
 .nav {
   display: flex;
-  background-image: var(--color-imagen), url(../../../public/nav2.jpg);
+  background-image:  var(--color-imagen), url(../../../public/nav_landing.jpg);
   align-items: center;
   text-align: center;
   justify-content: space-around;
   box-shadow: var(--box-shadow);
   flex-direction: row-reverse;
   background-size: cover;
+  font-family: 'Bilbo', cursive;
+  font-size: 30px;
+
 }
 
 .nav2 {
@@ -53,6 +56,8 @@ body {
   padding: 10px;
   text-decoration: none;
   color: var(--color-primario);
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
 }
 
 .nav__copy {
