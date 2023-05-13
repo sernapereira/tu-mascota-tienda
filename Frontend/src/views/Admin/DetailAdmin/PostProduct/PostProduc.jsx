@@ -42,6 +42,7 @@ const initialForm = {
   edad: "",
   color: "",
   genero: "",
+  raza: "",
   imagen: [],
 };
 
@@ -79,6 +80,7 @@ const PostProduct = () => {
       edad: "",
       color: "",
       genero: "",
+      raza: "",
       imagen: [],
     });
   };
@@ -110,12 +112,12 @@ const PostProduct = () => {
             placeholder="Genero"
             name="genero"
           />
-          {/* <input
+          <input
             onChange={(e) => changeHandler(e)}
             type="text"
             placeholder="Raza"
             name="raza"
-          /> */}
+          />
           <input
             onChange={(e) => changeHandler(e)}
             type="text"

@@ -40,10 +40,9 @@ const postDogHandler = async (req, res) => {
       edad,
       color,
       genero,
+      raza,
       imagen,
-      nameRaza,
-      tamanioPromedio,
-      imagenRaza,
+    
     } = req.body;
 
     console.log(imagen);
@@ -53,10 +52,9 @@ const postDogHandler = async (req, res) => {
       edad,
       color,
       genero,
+      raza,
       imagen,
-      nameRaza,
-      tamanioPromedio,
-      imagenRaza
+    
     );
     res.status(201).json(newDog);
   } catch (error) {

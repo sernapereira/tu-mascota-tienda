@@ -5,14 +5,28 @@ import style from "./Home.module.css";
 import { getAllDog } from "../../redux/Actions/dogActions";
 import Cards from "../../component/Cards/Cards";
 import { Link } from "react-router-dom";
+import Navbar from "../../component/navbar/navbar";
+import { setCurrentPage } from "../../redux/slice/pageSlice";
+import { filterAllDogs } from "../../redux/Actions/filterAction";
 
 const Home = () => {
   const dispatch = useDispatch();
-  const { dogs } = useSelector((state) => state.dogs);
+  const { filterDog, dogs } = useSelector((state) => state.dogs);
+
+  const [filters, setFilters] = useState({
+    raza: "",
+    genero: "",
+    tamaño: "",
+  });
 
   useEffect(() => {
     dispatch(getAllDog());
-  }, []);
+  }, [dispatch]);
+  
+  useEffect(() => {
+    dispatch(filterAllDogs(filters));
+  }, [dispatch, filters, dogs]);
+  
 
   const phoneNumber = "+573027315371";
   const message = "Hola mi nombre es :  `   `, >>> !! Quiero informacion ¡¡, ";
@@ -21,41 +35,63 @@ const Home = () => {
     message
   )}`;
 
+  function handlerFilter(event) {
+    const { name, value } = event.target;
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      [name]: value,
+    }));
+    dispatch(filterAllDogs({ ...filters, [name]: value }));
+    dispatch(setCurrentPage(1));
+  }
+  
   return (
     <div className={style.container}>
       <div className={style.home}>
+        <Navbar />
         <div className={style.nav}>
           <h1 className={style.nav__title}> ! Tu mascota te espera ¡</h1>
           <div className={style.nav__allSelect}>
             <div className={style.nav__select_enum}>
               <h3>Razas</h3>
-              <select name="raza" className={style.nav__select}>
-                <option value="labrador">Labrador</option>
+              <select
+                name="raza"
+                className={style.nav__select}
+                onChange={(e) => handlerFilter(e)}
+              >
+                <option value="">Todos</option>
+                {dogs.map((el, inex) => (
+                  <option value={el.raza} key={inex}>
+                    {el.raza}
+                  </option>
+                ))}
               </select>
             </div>
 
             <div className={style.nav__select_enum}>
               <h3>Genero</h3>
-              <select name="genero" className={style.nav__select}>
-                <option value="labrador">Hembra</option>
-                <option value="labrador">Macho</option>
+              <select
+                name="genero"
+                className={style.nav__select}
+                onChange={(e) => handlerFilter(e)}
+              >
+                <option value="">Todos</option>
+                <option value="hembra">Hembra</option>
+                <option value="macho">Macho</option>
               </select>
             </div>
             <div className={style.nav__select_enum}>
               <h3>Tamaños</h3>
-              <select name="tamaño" className={style.nav__select}>
-                <option value="tamaño">Grande</option>
-                <option value="tamaño">Medianos</option>
-                <option value="tamaño">Pequeños</option>
-              </select>
-            </div>
-            <div className={style.nav__select_enum}>
-              <h3>Color</h3>
-              <select name="color" className={style.nav__select}>
-                <option value="labrador">Negros</option>
-                <option value="labrador">Blancos</option>
-                <option value="labrador">Cremas</option>
-                <option value="labrador">Gris</option>
+              <select
+                name="tamaño"
+                className={style.nav__select}
+                onChange={(e) => handlerFilter(e)}
+              >
+                <option value="">Todos</option>
+                <option value="mini">De raza Mini</option>
+                <option value="pequenias">De raza Pequeña</option>
+                <option value="medianas">De raza Medianas</option>
+                <option value="grande">De raza Grandes</option>
               </select>
             </div>
           </div>
@@ -79,13 +115,17 @@ const Home = () => {
           </h1>
         </div>
         <div className={style.home__cards}>
-          <Cards />
+          <Cards filterDog={filterDog} />
         </div>
         <div></div>
 
         <div className={style.home__contac}>
           <div>
-            <img src="../../../public/Tu_Mascota_Tienda-T.png" alt="" />
+            <img
+              src="../../../public/Tu_Mascota_Tienda-T.png"
+              alt=""
+              className={style.home__contac_imagen}
+            />
           </div>
           <div>
             <h1>Contactanos</h1>

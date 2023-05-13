@@ -33,7 +33,7 @@ const Detail = () => {
 
   return (
     <div className={style.container}>
-     
+     <Navbar/>
       <div className={style.detail}>
         <div className={style.detail__listaImg}>
           {displayedImages?.map((dog, index) => {

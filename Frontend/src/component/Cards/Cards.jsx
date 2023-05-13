@@ -1,28 +1,14 @@
+import { useState } from "react";
 import Card from "../Card/Card";
+import Paginado from "../Paginado/Paginado";
 import style from "./Cards.module.css";
 import { useDispatch, useSelector } from "react-redux";
 
-const Cards = () => {
-  const { dogs } = useSelector((state) => state.dogs);
+const Cards = ({ filterDog }) => {
 
   return (
     <div className={style.container}>
-      {dogs?.map((dog, index) => {
-        return (
-          <div className={style.cards__card}>
-            <Card
-              key={index}
-              id={dog.id}
-              name={dog.name}
-              edad={dog.edad}
-              color={dog.color}
-              genero={dog.genero}
-              imagen={dog.imagen}
-              raza={[dog.rece]}
-            />
-          </div>
-        );
-      })}
+      <Paginado cards={filterDog} />
     </div>
   );
 };

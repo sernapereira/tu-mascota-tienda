@@ -3,13 +3,14 @@ const { Dog, Race } = require("../db");
 
 //////////////////////////////////////
 
-const createDog = async (name, edad, color, genero, imagen) => {
+const createDog = async (name, edad, color, genero, raza, imagen) => {
   console.log(name);
   const create = await Dog.create({
     name,
     edad,
     color,
     genero,
+    raza,
     imagen,
   });
 
@@ -44,33 +45,17 @@ const updateDogController = async (
   edad,
   color,
   genero,
-  image,
-  nameRaza,
-  tamanioPromedio,
-  imagenRaza
+  raza,
+  image
 ) => {
-  const race = await Race.findByPk(id);
-
   await Dog.update(
     {
       name,
       edad,
       color,
       genero,
+      raza,
       imagen: [{ image: image }],
-    },
-    {
-      where: {
-        id: id,
-      },
-    }
-  );
-
-  await Race.update(
-    {
-      nameRaza,
-      tamanioPromedio,
-      imagenRaza: [{ imgRace: "sdfsdfsdfsdfsf" }],
     },
     {
       where: {

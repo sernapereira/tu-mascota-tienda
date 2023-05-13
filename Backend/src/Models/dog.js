@@ -23,11 +23,15 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
       genero: {
-        type: DataTypes.ENUM("macho", "hembra"),
+        type: DataTypes.ENUM("macho", "hembra", "macho y hembra"),
         allowNull: false,
       },
       imagen: {
         type: DataTypes.ARRAY(DataTypes.JSON),
+        allowNull: false,
+      },
+      raza: {
+        type: DataTypes.STRING,
         allowNull: false,
       },
     },

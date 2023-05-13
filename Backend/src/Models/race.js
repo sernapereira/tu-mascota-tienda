@@ -22,6 +22,10 @@ module.exports = (sequelize) => {
         type: DataTypes.ARRAY(DataTypes.JSON),
         allowNull: false,
       },
+      cualidades: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      }
     },
     {
       timestamps: false,

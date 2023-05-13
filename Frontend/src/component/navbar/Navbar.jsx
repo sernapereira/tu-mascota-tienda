@@ -3,23 +3,15 @@ import style from "./Navbar.module.css";
 
 const Navbar = () => {
 
-  if(window.location.pathname.includes("admin") ){
-    return
-  }
+
 
   return (
    
    <div className={style.container}>
-      <nav className={ window.location.pathname === "/home" ? style.nav : style.nav2 } >
-        {window.location.pathname === "/" ? (
-          <a href="/home" className={style.nav__botton}>
-            !! Encuentra tu mascota
-          </a>
-        ) : (
-          <a href="/" className={style.nav__botton}>
-            !! Mira las Ofertas que tenemos para ti
-          </a>
-        )}
+      <nav className={ style.nav } >
+      
+       
+    
         <a href="/home" className={style.nav__logo}>
           <div className={style.nav__logo}>
             {" "}

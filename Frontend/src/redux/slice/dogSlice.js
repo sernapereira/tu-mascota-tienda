@@ -4,6 +4,7 @@ const initialState = {
   dogs: [],
   dogDetail: [],
   post: [],
+  filterDog: [],
 };
 
 export const dogSlice = createSlice({
@@ -19,8 +20,12 @@ export const dogSlice = createSlice({
     postDog: (state, action) => {
       state.post = action.payload;
     },
+    filteredProducts: (state, action) => {
+      state.filterDog = action.payload;
+    },
   },
 });
 
-export const { getDog, getDogById, postDog } = dogSlice.actions;
+export const { getDog, getDogById, postDog, filteredProducts } =
+  dogSlice.actions;
 export default dogSlice.reducer;

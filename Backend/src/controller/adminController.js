@@ -75,10 +75,8 @@ const deletUserController = async (id) => {
 const inicioSeccionController = async (username, userPassword) => {
   const userClient = await Users.findOne({ where: { name: username } });
 
-
-
   if (!userClient) {
-    return ({ error: "usuarios no encontrado",codigo: 400  });
+    return { error: "usuarios no encontrado", codigo: 400 };
   }
 
   const isMatch = await comparePassword(userPassword, userClient.password);
