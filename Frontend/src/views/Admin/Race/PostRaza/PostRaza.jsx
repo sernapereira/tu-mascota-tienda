@@ -1,8 +1,7 @@
 import { useState } from "react";
-import style from "./PostProduc.module.css";
-import axios from "axios";
+import style from "./PostRaza.module.css";
 import { useDispatch } from "react-redux";
-import { postDogAction } from "../../../../redux/Actions/dogActions";
+import { postRazaAction } from "../../../../redux/Actions/razaAction";
 
 let cache = {};
 
@@ -38,18 +37,17 @@ let uploadImage = async (file) => {
 //////////////////////////////////////////
 
 const initialForm = {
-  name: "",
-  edad: "",
-  color: "",
-  genero: "",
-  raza: "",
-  imagen: [],
-  tamano: "",
+  nameRaza: "",
+  tamanioPromedio: "",
+  imagenRaza: [],
+  reseña: "",
+  cualidades: [],
 };
 
-const PostProduct = () => {
+const PostRaza = () => {
   const dispatch = useDispatch();
   const [form, setForm] = useState(initialForm);
+  const [punto, setPunto] = useState({});
 
   //////////////////////////////////////////
 
@@ -67,25 +65,41 @@ const PostProduct = () => {
     let image = await uploadImage(file);
     setForm({
       ...form,
-      imagen: [...form.imagen, { image }],
+      imagenRaza: [...form.imagenRaza, { image }],
     });
   };
 
   /////////////////////////////////////////
 
-  const onSubmitHandler = (event) => {
-    event.preventDefault();
-    dispatch(postDogAction(form));
+  const subirPositivo = (evento) => {
+    evento.preventDefault();
     setForm({
-      name: "",
-      edad: "",
-      color: "",
-      genero: "",
-      raza: "",
-      imagen: [],
-      tamano: "",
+      ...form,
+      cualidades: [...form.cualidades, punto ],
     });
   };
+
+  const handlerPunto = (evento) => {
+    const punto = evento.target.name;
+    const value = evento.target.value;
+    setPunto({ ["cualidad"]: value });
+  };
+  ////////////////////////////////////////
+
+  const onSubmitHandler = (event) => {
+    event.preventDefault();
+    dispatch(postRazaAction(form));
+    setForm({
+      nameRaza: "",
+      tamanioPromedio: "",
+      imagenRaza: [],
+      reseña: "",
+      cualidades: [],
+    });
+  };
+
+  console.log(punto);
+  console.log(form);
 
   return (
     <div className={style.container}>
@@ -99,57 +113,49 @@ const PostProduct = () => {
           <input
             onChange={(e) => changeHandler(e)}
             type="text"
-            placeholder="Nombre mascota"
-            name="name"
+            placeholder="Nombre Raza"
+            name="nameRaza"
           />
-          <input
-            onChange={(e) => changeHandler(e)}
-            type="number"
-            placeholder="Meses de vida"
-            name="edad"
-          />
-
-          <select name="genero" onChange={(e) => changeHandler(e)}>
-            <option value="">genero</option>
-            <option value="macho">Macho</option>
-            <option value="hembra">Hembra</option>
-            <option value="macho y hembra">Macho y Hembra</option>
-          </select>
-
-          <input
-            onChange={(e) => changeHandler(e)}
-            type="text"
-            placeholder="Raza"
-            name="raza"
-          />
-          <input
-            onChange={(e) => changeHandler(e)}
-            type="text"
-            placeholder="color"
-            name="color"
-          />
-
-          <select name="tamano" onChange={(e) => changeHandler(e)}>
-            <option value="">Tamaño</option>
+          <select name="tamanioPromedio" onChange={(e) => changeHandler(e)}>
             <option value="mini">Mini</option>
-            <option value="pequenias">Pequeños</option>
+            <option value="pequenias">Pequeñas</option>
             <option value="medianas">Medianas</option>
-            <option value="grande">Grandes</option>
+            <option value="grande">grande</option>
           </select>
+          <textarea
+            onChange={(e) => changeHandler(e)}
+            type="text"
+            placeholder="Reseña"
+            name="reseña"
+          />
+          {
+            form.cualidades && form.cualidades.map((el, index) => (
+              <li key={index}>{el.cualidad}</li>
+            ))
+          }
+          <input
+            type="text"
+            placeholder="Puntos positivos"
+            name="cualidades"
+            onChange={(e) => handlerPunto(e)}
+          />
+          <button onClick={(e) => subirPositivo(e)}>Subir Comentario</button>
+        </div>
 
+        <div>
+          <figure className={style.form__figure}>
+            {form.imagenRaza
+              ? form.imagenRaza.map((el, index) => (
+                  <img src={el.image} className={style.form__img} key={index} />
+                ))
+              : null}
+          </figure>
           <input
             type="file"
             placeholder="Imagen"
             onChange={(e) => manejarCambioArchivo(e)}
           />
-
-          <figure className={style.form__figure}>
-            {form.imagen
-              ? form.imagen.map((el, index) => (
-                  <img src={el.image} className={style.form__img} key={index} />
-                ))
-              : null}
-          </figure>
+          {/* <button onClick={(e) => subirArchivo(e)}>Subir imagen</button> */}
         </div>
       </form>
       <div>
@@ -164,4 +170,4 @@ const PostProduct = () => {
   );
 };
 
-export default PostProduct;
+export default PostRaza;

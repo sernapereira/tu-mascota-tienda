@@ -8,6 +8,8 @@ import Detail from "./views/Detail/Detail";
 import InicioForm from "./views/Admin/InicioForm/InicioForm";
 import Panel from "./views/Admin/Panel";
 
+
+
 //localStorage.removeItem("admin")
 const acceso =
   localStorage.getItem("admin") === false ||

@@ -3,7 +3,7 @@ const { Dog, Race } = require("../db");
 
 //////////////////////////////////////
 
-const createDog = async (name, edad, color, genero, raza, imagen) => {
+const createDog = async (name, edad, color, genero, raza, imagen, tamano) => {
   console.log(name);
   const create = await Dog.create({
     name,
@@ -12,6 +12,7 @@ const createDog = async (name, edad, color, genero, raza, imagen) => {
     genero,
     raza,
     imagen,
+    tamano,
   });
 
   return { message: "Producto Creado Con Extio 🐶" };

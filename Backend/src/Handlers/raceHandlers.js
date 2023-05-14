@@ -33,9 +33,15 @@ const getRaceByIdHandler = async (req, res) => {
 
 const postRaceHandler = async (req, res) => {
   try {
-    const { nameRaza, tamanioPromedio, imagenRaza } = req.body;
+    const { nameRaza, tamanioPromedio, imagenRaza, reseña,cualidades } = req.body;
 
-    const newDog = await createRace(nameRaza, tamanioPromedio, imagenRaza);
+    const newDog = await createRace(
+      nameRaza,
+      tamanioPromedio,
+      imagenRaza,
+      reseña,
+      cualidades
+    );
     res.status(201).json(newDog);
   } catch (error) {
     console.log({ error: error.message });

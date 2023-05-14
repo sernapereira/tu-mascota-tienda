@@ -42,6 +42,7 @@ const postDogHandler = async (req, res) => {
       genero,
       raza,
       imagen,
+      tamano,
     
     } = req.body;
 
@@ -54,6 +55,7 @@ const postDogHandler = async (req, res) => {
       genero,
       raza,
       imagen,
+      tamano
     
     );
     res.status(201).json(newDog);
@@ -74,9 +76,7 @@ const putDogHandler = async (req, res) => {
       color,
       genero,
       image,
-      nameRaza,
-      tamanioPromedio,
-      imagenRaza,
+    
     } = req.body;
     const putdog = await updateDogController(
       id,
@@ -85,9 +85,7 @@ const putDogHandler = async (req, res) => {
       color,
       genero,
       image,
-      nameRaza,
-      tamanioPromedio,
-      imagenRaza
+    
     );
 
     res.status(200).json(putdog);
