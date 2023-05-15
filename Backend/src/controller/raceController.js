@@ -4,21 +4,21 @@ const { Dog, Race } = require("../db");
 //////////////////////////////////////
 
 const createRace = async (
-  nameRaza,
+  nameRazaMod,
   tamanioPromedio,
   imagenRaza,
   reseña,
   cualidades
 ) => {
   const create = await Race.create({
-    nameRaza,
+    nameRaza: nameRazaMod,
     tamanioPromedio,
     imagenRaza,
     reseña,
     cualidades,
   });
 
-  return { message: "Raza Creado Con Extio 🐶" };
+  return { message: "Raza Creado Con Extio 🐶", status: 201 };
 };
 
 //////////////////////////////////////////////

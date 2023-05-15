@@ -35,28 +35,17 @@ const getDogByIdHandler = async (req, res) => {
 
 const postDogHandler = async (req, res) => {
   try {
-    const {
-      name,
-      edad,
-      color,
-      genero,
-      raza,
-      imagen,
-      tamano,
-    
-    } = req.body;
-
-    console.log(imagen);
+    const { name, edad, color, genero, raza, imagen, tamano } = req.body;
+    const razaMod = raza.toLowerCase();
 
     const newDog = await createDog(
       name,
       edad,
       color,
       genero,
-      raza,
+      razaMod,
       imagen,
       tamano
-    
     );
     res.status(201).json(newDog);
   } catch (error) {
@@ -69,23 +58,14 @@ const postDogHandler = async (req, res) => {
 
 const putDogHandler = async (req, res) => {
   try {
-    const {
-      id,
-      name,
-      edad,
-      color,
-      genero,
-      image,
-    
-    } = req.body;
+    const { id, name, edad, color, genero, image } = req.body;
     const putdog = await updateDogController(
       id,
       name,
       edad,
       color,
       genero,
-      image,
-    
+      image
     );
 
     res.status(200).json(putdog);

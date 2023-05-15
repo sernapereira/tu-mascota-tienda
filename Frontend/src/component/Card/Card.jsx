@@ -7,7 +7,7 @@ const Card = ({ key, id, name, edad, color, genero, imagen, raza }) => {
     <div className={style.card}>
       <Link to={`/detail/${id}`} className={style.card__link}>
         <figure className={style.card__figure}>
-          <img src={imagen[0].image} alt="" className={style.card__img} />
+          <img src={ imagen[0] ? imagen[0]?.image : "../../../public/default-image-5-1.jpg"} alt="imagen de mascota" className={style.card__img} />
         </figure>
         <div className={style.card__text}>
           <h1>{name}</h1>

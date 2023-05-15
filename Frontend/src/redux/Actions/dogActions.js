@@ -25,7 +25,7 @@ const getDogByIdAction = (id) => async (dispatch) => {
 const postDogAction = (data) => async (dispatch) => {
   try {
     const json = await axios.post(`http://localhost:3002/dog`, data);
-    console.log(json.data);
+   
     return dispatch(postDog(json.data));
   } catch (error) {
     console.log({ error: error.message });

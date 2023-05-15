@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import style from "./PostProduc.module.css";
 import axios from "axios";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { postDogAction } from "../../../../redux/Actions/dogActions";
+import { postDog } from "../../../../redux/slice/dogSlice";
 
 let cache = {};
 
@@ -50,6 +51,10 @@ const initialForm = {
 const PostProduct = () => {
   const dispatch = useDispatch();
   const [form, setForm] = useState(initialForm);
+  const [statusco, setStatusco] = useState(false);
+
+  const { post } = useSelector((state) => state.dogs);
+  console.log(post.status);
 
   //////////////////////////////////////////
 
@@ -76,90 +81,111 @@ const PostProduct = () => {
   const onSubmitHandler = (event) => {
     event.preventDefault();
     dispatch(postDogAction(form));
-    setForm({
-      name: "",
-      edad: "",
-      color: "",
-      genero: "",
-      raza: "",
-      imagen: [],
-      tamano: "",
-    });
+    setForm(initialForm);
   };
 
+  useEffect(() => {
+    if (statusco) {
+      const cambiarEstadoDespuesDeTiempo = setTimeout(() => {
+        setStatusco(false);
+        dispatch(postDog({ status: 400 }));
+        
+      }, 5000);
+
+      return () => clearTimeout(cambiarEstadoDespuesDeTiempo);
+    }
+  }, [statusco]);
+
+  useEffect(() => {
+    post.status === 201 ? setStatusco(true) : setStatusco(false);
+  });
+
+  console.log(statusco);
   return (
     <div className={style.container}>
-      <div>
+      {!statusco ? (
         <div>
-          <h2>Publicar Nuevo Producto</h2>
+          <div>
+            <div>
+              <h2>Publicar Nuevo Producto</h2>
+            </div>
+          </div>
+          <form className={style.form}>
+            <div className={style.form__input}>
+              <input
+                onChange={(e) => changeHandler(e)}
+                type="text"
+                placeholder="Nombre mascota"
+                name="name"
+              />
+              <input
+                onChange={(e) => changeHandler(e)}
+                type="number"
+                placeholder="Meses de vida"
+                name="edad"
+              />
+
+              <select name="genero" onChange={(e) => changeHandler(e)}>
+                <option value="">genero</option>
+                <option value="macho">Macho</option>
+                <option value="hembra">Hembra</option>
+                <option value="macho y hembra">Macho y Hembra</option>
+              </select>
+
+              <input
+                onChange={(e) => changeHandler(e)}
+                type="text"
+                placeholder="Raza"
+                name="raza"
+              />
+              <input
+                onChange={(e) => changeHandler(e)}
+                type="text"
+                placeholder="color"
+                name="color"
+              />
+
+              <select name="tamano" onChange={(e) => changeHandler(e)}>
+                <option value="">Tamaño</option>
+                <option value="mini">Mini</option>
+                <option value="pequenias">Pequeños</option>
+                <option value="medianas">Medianas</option>
+                <option value="grande">Grandes</option>
+              </select>
+
+              <input
+                type="file"
+                placeholder="Imagen"
+                onChange={(e) => manejarCambioArchivo(e)}
+              />
+
+              <figure className={style.form__figure}>
+                {form.imagen
+                  ? form.imagen.map((el, index) => (
+                      <img
+                        src={el.image}
+                        className={style.form__img}
+                        key={index}
+                      />
+                    ))
+                  : null}
+              </figure>
+            </div>
+          </form>
+          <div>
+            <button
+              onClick={(e) => onSubmitHandler(e)}
+              className={style.form__boton}
+            >
+              Subir Producuto
+            </button>
+          </div>
         </div>
-      </div>
-      <form className={style.form}>
-        <div className={style.form__input}>
-          <input
-            onChange={(e) => changeHandler(e)}
-            type="text"
-            placeholder="Nombre mascota"
-            name="name"
-          />
-          <input
-            onChange={(e) => changeHandler(e)}
-            type="number"
-            placeholder="Meses de vida"
-            name="edad"
-          />
-
-          <select name="genero" onChange={(e) => changeHandler(e)}>
-            <option value="">genero</option>
-            <option value="macho">Macho</option>
-            <option value="hembra">Hembra</option>
-            <option value="macho y hembra">Macho y Hembra</option>
-          </select>
-
-          <input
-            onChange={(e) => changeHandler(e)}
-            type="text"
-            placeholder="Raza"
-            name="raza"
-          />
-          <input
-            onChange={(e) => changeHandler(e)}
-            type="text"
-            placeholder="color"
-            name="color"
-          />
-
-          <select name="tamano" onChange={(e) => changeHandler(e)}>
-            <option value="">Tamaño</option>
-            <option value="mini">Mini</option>
-            <option value="pequenias">Pequeños</option>
-            <option value="medianas">Medianas</option>
-            <option value="grande">Grandes</option>
-          </select>
-
-          <input
-            type="file"
-            placeholder="Imagen"
-            onChange={(e) => manejarCambioArchivo(e)}
-          />
-
-          <figure className={style.form__figure}>
-            {form.imagen
-              ? form.imagen.map((el, index) => (
-                  <img src={el.image} className={style.form__img} key={index} />
-                ))
-              : null}
-          </figure>
+      ) : (
+        <div className={style.creado}>
+          <h1> !! Producto creado con exito ✔</h1>
         </div>
-      </form>
-      <div>
-        <button
-          onClick={(e) => onSubmitHandler(e)}
-          className={style.form__boton}
-        >
-          Subir Producuto
-        </button>
-      </div>
+      )}
     </div>
   );
 };

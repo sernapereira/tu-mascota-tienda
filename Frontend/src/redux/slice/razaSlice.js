@@ -12,7 +12,6 @@ export const razaSlice = createSlice({
     getRaza: (state, action) => {
       state.raza = action.payload;
     },
-
     postRazaCreate: (state, action) => {
       state.postRaza = action.payload;
     },

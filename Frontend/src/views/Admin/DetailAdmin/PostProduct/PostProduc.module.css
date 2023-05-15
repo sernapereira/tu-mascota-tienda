@@ -41,3 +41,12 @@
 width: 40%;
 }
 
+.creado{
+  background-color: rgba(0, 128, 0, 0.438);
+  text-align: center;
+  width: 70%;
+  height: 30vh;
+  border-radius: 10px;
+  line-height: 30vh;
+  transition: 2s;
+}

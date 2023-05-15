@@ -33,10 +33,11 @@ const getRaceByIdHandler = async (req, res) => {
 
 const postRaceHandler = async (req, res) => {
   try {
-    const { nameRaza, tamanioPromedio, imagenRaza, reseña,cualidades } = req.body;
-
+    const { nameRaza, tamanioPromedio, imagenRaza, reseña, cualidades } =
+      req.body;
+    const nameRazaMod = nameRaza.toLowerCase();
     const newDog = await createRace(
-      nameRaza,
+      nameRazaMod,
       tamanioPromedio,
       imagenRaza,
       reseña,
