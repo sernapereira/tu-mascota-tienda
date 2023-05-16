@@ -18,6 +18,7 @@ const createUser = async (name, password, admin) => {
 
 const allUsersController = async () => {
   const data = await usersBdd();
+  //////////////////
   return data;
 };
 
