@@ -119,7 +119,7 @@ const Home = () => {
         <div className={style.home__cards}>
           <Cards filterDog={filterDog} />
         </div>
-        <div></div>
+        
 
         <div className={style.home__contac}>
           <div>

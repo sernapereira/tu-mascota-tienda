@@ -8,7 +8,6 @@ const Paginado = ({ cards }) => {
   const { currentPage, cardsPerPage } = useSelector(
     (state) => state.pagination
   );
- 
 
   const dispatch = useDispatch();
 
@@ -41,22 +40,29 @@ const Paginado = ({ cards }) => {
   };
 
   return (
-    <div>
-      {getCurrentCards().map((card) => (
-        <div key={card.id} className={style.cards__card}>
-          <Card
-            id={card.id}
-            name={card.name}
-            edad={card.edad}
-            color={card.color}
-            genero={card.genero}
-            raza={[card.raza]}
-            imagen={card.imagen}
-          />
-        </div>
-      ))}
-      <div className="pagination">
-        <button onClick={goToPreviousPage} disabled={currentPage === 1}>
+    <div className={style.container}>
+      <div className={style.cards}>
+        {getCurrentCards().map((card) => (
+          <div key={card.id} className={style.cards__card}>
+            <Card
+              id={card.id}
+              name={card.name}
+              edad={card.edad}
+              color={card.color}
+              genero={card.genero}
+              raza={[card.raza]}
+              imagen={card.imagen}
+            />
+          </div>
+        ))}
+      </div>
+
+      <div className={style.pagination}>
+        <button
+          onClick={goToPreviousPage}
+          disabled={currentPage === 1}
+          className={style.pagination__boton}
+        >
           Anterior
         </button>
 
@@ -64,13 +70,13 @@ const Paginado = ({ cards }) => {
           <button
             key={index}
             onClick={() => goToPage(index + 1)}
-            className={currentPage === index + 1 ? "active" : ""}
+            className={style.pagination__boton}
           >
             {index + 1}
           </button>
         ))}
 
-        <button onClick={goToNextPage} disabled={currentPage === totalPages}>
+        <button onClick={goToNextPage} disabled={currentPage === totalPages} className={style.pagination__boton}>
           Siguiente
         </button>
       </div>

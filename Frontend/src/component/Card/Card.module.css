@@ -5,6 +5,7 @@
 }
 
 .card {
+  /* outline: 3px solid red; */
   overflow: hidden;
   width: 100%;
   height: auto;
@@ -47,15 +48,23 @@
   color: black;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 320px) {
   .card__img {
     border-radius: 2%;
   }
 
-  .card {
-    padding: 0;
-  }
   .card__h3 {
-    font-size: 3vh;
+    font-size: 2.5vh;
+  }
+
+  .card__text {
+    width: 100%;
+    height: auto;
+
+    background-image: url(../../../public/Tu_Mascota_Tienda-T.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    background-position-x: 85%;
   }
 }

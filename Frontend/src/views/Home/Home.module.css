@@ -277,7 +277,8 @@ ul :nth-child(3) {
   background-size: cover;
   width: 100%;
   height: auto;
-  padding: 30px;
+  padding: 0;
+  
 }
 
 
