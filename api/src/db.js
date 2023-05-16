@@ -19,13 +19,13 @@ const basename = path.basename(__filename);
 const modelDefiners = [];
 
 //cargar en el array modelDefiner todos los modelos de Sequelize definidos en archivos js que estan almacenados en "models"
-fs.readdirSync(path.join(__dirname, "/models"))
+fs.readdirSync(path.join(__dirname, "../src/models"))
   .filter(
     (file) =>
       file.indexOf(".") !== 0 && file !== basename && file.slice(-3) === ".js"
   )
   .forEach((file) => {
-    modelDefiners.push(require(path.join(__dirname, "/models", file)));
+    modelDefiners.push(require(path.join(__dirname, "../src/models", file)));
   });
 
 //carga todos los modelos de sequelize
