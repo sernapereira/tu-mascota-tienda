@@ -1,0 +1,363 @@
+@import url("https://fonts.googleapis.com/css2?family=Bilbo&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: white;
+}
+
+/* ================================ nav section ====================*/
+.nav {
+  background-color: rgba(0, 0, 0, 0.918);
+  color: var(--color-neutro);
+
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  align-items: center;
+}
+
+.nav__title {
+  margin-bottom: 17px;
+  color: var(--color-secundario);
+}
+
+.nav__select {
+  border-radius: 30px;
+  margin: 0px 40px;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 15px;
+  background-color: rgba(93, 93, 93, 0.315);
+  color: rgb(255, 149, 83);
+  font-family: "Open Sans", sans-serif;
+}
+
+.nav__allSelect {
+  display: flex;
+}
+
+.nav__select_enum {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Bilbo", cursive;
+  font-size: 30px;
+}
+
+
+
+@media screen and (max-width: 670px) {
+  .nav {
+    font-size: 2vh;
+  }
+
+  .nav__select {
+    margin: 0 2vh;
+    padding: 0 2.5vh;
+    font-size: 2vh;
+  }
+
+  .nav__select_enum{
+    font-size: 3.5vh;
+  }
+}
+
+
+@media screen and (max-width: 375px) {
+
+
+  .nav__select {
+    margin: 0 2vh;
+    padding: 0 2.5vh;
+    font-size: 2vh;
+  }
+
+  .nav__select_enum{
+    font-size: 3.5vh;
+    margin: 2vh 0;
+  }
+
+  .nav__allSelect{
+    flex-direction: column;
+
+  }
+}
+
+
+/* ============================= div img section ======================== */
+
+.home__div {
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+    url(../../../public//fotor_atras.jpg);
+  backdrop-filter: blur(4rem);
+  /* outline: 3px solid red; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top: 1px solid rgba(0, 0, 0, 0.871);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  height: 700px;
+}
+
+.home__anuncio {
+  background-image: url(../../../public/logoTt.png),
+    linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.575));
+  background-repeat: no-repeat;
+  background-position: bottom;
+  color: var(--color-secundario);
+
+  border-radius: 10px;
+  width: 90vh;
+  height: 90%;
+  margin: 50px 100px;
+  padding: 4vh;
+  overflow: hidden;
+  font-family: "Bilbo", cursive;
+  font-size: 30px;
+  box-shadow: 0 0 45px rgba(0, 0, 0, 0.896);
+}
+
+.home__imagen {
+  background-image: url(../../../public//div_imagen.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 70%;
+}
+
+ul {
+  font-family: "Open Sans", sans-serif;
+  color: var(--color-neutro);
+}
+
+ul :nth-child(1) {
+  list-style-position: outside;
+  list-style-type: none;
+  margin: 30px 50px;
+  list-style-image: url(../../../public/injection-solid-24.png);
+}
+
+ul :nth-child(2) {
+  list-style-position: outside;
+  list-style-type: none;
+  margin: 30px 50px;
+  list-style-image: url(../../../public/capsule-solid-24.png);
+}
+
+ul :nth-child(3) {
+  list-style-position: outside;
+  list-style-type: none;
+  margin: 30px 50px;
+  list-style-image: url(../../../public/certificado-24.png);
+}
+
+@media screen and (max-width: 768px) {
+  .home__div {
+    justify-content: center;
+  }
+
+  .home__anuncio {
+    width: 75%;
+    margin: 30px 0 0 30px;
+  }
+
+  .home__imagen {
+    width: 40%;
+    background-size: auto;
+    margin: 0;
+    background-position: bottom;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .home__div {
+    justify-content: center;
+    height: 85vh;
+    
+  }
+
+  .home__anuncio {
+    background-image: url(../../../public/logoTt.png),
+    linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.808));
+    width: 100%;
+    margin: 30px 0 0 30px;
+    font-size: 3vh;
+    padding: 2vh;
+  }
+
+  ul{
+    font-size: 2vh;
+  }
+
+  .home__imagen {
+    width: 40%;
+    background-size: auto;
+    margin: 0;
+    background-position: bottom;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .home__div {
+    justify-content: center;
+    height: 70vh;
+    
+  }
+
+  .home__anuncio {
+    background-image: url(../../../public/logoTt.png),
+    linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.808));
+    width: 100%;
+    margin: 30px 0 0 30px;
+    font-size: 2.5vh;
+    padding: 0.5vh;
+  }
+
+  ul{
+    font-size: 2vh;
+    margin: 0;
+    padding: 0;
+    /* outline: 3px solid red; */
+  }
+
+  .home__imagen {
+    width: 40%;
+    background-size: auto;
+    margin: 0;
+    background-position: bottom;
+  }
+
+  
+}
+/* =========================  section Franja ==================*/
+
+.home__franja {
+  background-image: linear-gradient(360deg, #a1430082 0%, rgb(255, 111, 0) 100%),
+    url(../../../public/div_perro.png);
+
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  font-family: "Bilbo", cursive;
+}
+
+@media screen and (max-width: 768px) {
+  .home__franja {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .home__franja {
+    font-size: 3vh;
+    height: 30vh;
+  }
+}
+
+/* ============================= card section ========================== */
+
+.home__cards {
+  background-image: linear-gradient(360deg, #c25100dc 0%, #a1430050 100%),
+    url(../../../public//campo_maiz.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  
+}
+
+
+
+/* ==================================== contac section ================ */
+
+.home__contac {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row-reverse;
+  padding: 50px;
+  text-align: center;
+  font-size: 40px;
+  font-family: "Bilbo", cursive;
+  color: rgb(224, 224, 224);
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.915);
+}
+
+.home__redes {
+  font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+}
+
+.Link {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.contac__img {
+  height: auto;
+  width: 10%;
+  margin: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .home__contac {
+    flex-direction: column-reverse;
+    font-size: 25px;
+  }
+
+  .contac__img {
+    width: 5%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .home__contac {
+    flex-direction: column-reverse;
+    font-size: 25px;
+  }
+
+  .contac__img {
+    width: 10%;
+  }
+
+  .home__contac_imagen {
+    width: 75%;
+    margin-top: 49px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .home__contac {
+    flex-direction: column-reverse;
+    font-size: 20px;
+  }
+
+  .contac__img {
+    width: 10%;
+  }
+
+  .home__contac_imagen {
+    width: 75%;
+    margin-top: 49px;
+  }
+}

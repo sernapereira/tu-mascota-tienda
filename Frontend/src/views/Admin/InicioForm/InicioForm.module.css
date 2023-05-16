@@ -1,0 +1,83 @@
+* {
+    /* outline: 2px solid red; */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.318);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+
+    /* outline: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  padding: 70px;
+  
+  margin: 50px auto;
+  transition: 1s;
+  
+}
+
+.form {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0);
+  align-items: center;
+  flex-direction: column;
+  padding: 50px;
+  width: 70%;
+  border-radius: 20px;
+  box-shadow: 0 0 95px rgba(0, 0, 0, 0.4);
+  margin: 30px;
+}
+
+input {
+  font-size: 30px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(201, 201, 201);
+  margin: 20px;
+  padding: 5px;
+  width: 90%;
+  outline: none;
+}
+
+.form__inputNombre{
+    width: 100%;
+}
+
+.form__inputPassword{
+    width: 100%;
+}
+
+.message__img {
+  width: 40px;
+  margin: 20px;
+}
+
+.message {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+ 
+}
+
+.form__boton{
+    padding: 10px 70px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(39, 125, 196, 0.737);
+}
+
+.form__boton2{
+  padding: 10px 70px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(39, 196, 57, 0.737);
+}

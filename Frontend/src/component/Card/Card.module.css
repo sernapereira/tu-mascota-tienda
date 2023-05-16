@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card {
+  /* outline: 3px solid red; */
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+}
+
+.card__figure {
+  width: 100%;
+  height: 50vh;
+  /* outline: 2px solid red; */
+  overflow: hidden;
+}
+
+.card__img {
+  width: 100%;
+  height: 100%;
+  object-position: center;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+.card__h3 {
+  font-family: "Open Sans", sans-serif;
+}
+
+.card__logo {
+  width: 100%;
+}
+
+.card__text {
+  width: 100%;
+  height: 100%;
+
+  background-image: url(../../../public/Tu_Mascota_Tienda-T.png);
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.card__link {
+  text-decoration: none;
+  color: black;
+}
+
+@media screen and (max-width: 320px) {
+  .card__img {
+    border-radius: 2%;
+  }
+
+  .card__h3 {
+    font-size: 2.5vh;
+  }
+
+  .card__text {
+    width: 100%;
+    height: auto;
+
+    background-image: url(../../../public/Tu_Mascota_Tienda-T.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    background-position-x: 85%;
+  }
+}

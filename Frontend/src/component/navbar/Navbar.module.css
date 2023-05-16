@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* outline: 2px solid red;    */
+  font-family: "Open Sans", sans-serif;
+}
+
+:root {
+  --color-primario: #080707;
+  --color-secundario: #ea6200ec;
+  --color-neutro: #e7dfd9;
+  --color-aux: #7c4c24;
+  --color-contraste: #f9954ebb;
+  --box-shadow: 0 0 45px rgba(0, 0, 0, 0.5);
+  --color-imagen: linear-gradient(
+    360deg,
+    #000000d1 100%,
+    rgba(0, 0, 0, 0.442) 0%
+  );
+}
+
+.nav {
+  display: flex;
+  background-image:  linear-gradient(
+    360deg,
+    #f46d2481 0%,
+    rgba(248, 91, 0, 0.626) 100%
+  ), url(../../../public/nav_landing.jpg);
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  box-shadow: var(--box-shadow);
+  flex-direction: row-reverse;
+  background-size: cover;
+  font-family: "Bilbo", cursive;
+  font-size: 30px;
+}
+
+.nav__img {
+  width: 230px;
+}
+
+.nav__logo {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  text-decoration: none;
+  color: var(--color-primario);
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+}
+
+.nav__copy {
+  font-size: 10px;
+}
+
+.nav__botton {
+  background-color: var(--color-contraste);
+  padding: 15px 30px;
+  color: var(--color-primario);
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.nav__admin {
+  background-color: var(--color-secundario);
+  padding: 15px 30px;
+  color: var(--color-primario);
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+
+@media screen and (max-width: 670px) {
+ .nav{
+  background-size:auto;
+  background-repeat: no-repeat;
+  background-position: right;
+ }
+
+ .nav__img{
+  width: 40%;
+ }
+
+ .nav__logo{
+  font-size: 15px;
+ }
+}
+
+@media screen and (max-width: 375px) {
+  .nav{
+   background-size:auto;
+   background-repeat: no-repeat;
+   background-position: right;
+  }
+ 
+  .nav__img{
+   width: 40%;
+  }
+ 
+  .nav__logo{
+   font-size: 65%;
+   padding: 0;
+  }
+  .nav__copy {
+    font-size: 50%;
+  }
+ }
