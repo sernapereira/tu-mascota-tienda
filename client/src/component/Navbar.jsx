@@ -16,7 +16,7 @@ const Navbar = () => {
           <div className={style.nav__logo}>
             {" "}
             <img
-              src="../../../public/logoTt.png"
+              src="../../public/logoTt.png"
               alt="icono de compañia"
               className={style.nav__img}
             />
