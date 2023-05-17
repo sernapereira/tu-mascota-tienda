@@ -154,6 +154,21 @@ body {
   font-size: 180%;
   box-shadow: 0 0 45px rgba(0, 0, 0, 0.896);
   /* outline: 4px solid red; */
+  transition: 1s;
+}
+
+.home__anuncio:hover {
+  margin-top: 11%;
+  margin-left: 10.01%;
+  padding-top: 3%;
+  transition: .5s;
+}
+
+.home__anuncio:active {
+  margin-top: 11%;
+  margin-left: 10.01%;
+  padding-top: 3%;
+  transition: .5s;
 }
 
 .home__imagen {
@@ -164,8 +179,13 @@ body {
   height: 130vh;
   margin: 0;
   width: 40%;
+  transition: 1s;
 }
 
+.home__imagen:active {
+ width: 50%;
+ transition: .5s;
+}
 .home__imagen_img {
   width: 100%;
   height: 100%;

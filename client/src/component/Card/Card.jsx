@@ -5,7 +5,9 @@ const Card = ({ key, id, name, edad, color, genero, imagen, raza }) => {
 
   return (
     <div className={style.card}>
+  <h2 className={style.card__title}> Descubre tu tipo </h2>
       <Link to={`/detail/${id}`} className={style.card__link}>
+      
         <figure className={style.card__figure}>
           <img src={ imagen[0] ? imagen[0]?.image : "../../../public/default-image-5-1.jpg"} alt="imagen de mascota" className={style.card__img} />
         </figure>

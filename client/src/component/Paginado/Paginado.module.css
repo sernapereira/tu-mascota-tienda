@@ -11,7 +11,7 @@
   align-items: center;
 }
 
-.cards{
+.cards {
   width: 100%;
   /* outline: auto;   */
   display: flex;
@@ -20,12 +20,14 @@
 }
 
 .cards__card {
+  /* outline: auto;   */
+  border: 1px solid white;
   margin: 30px;
-  padding: 20px;
+  padding: 0.5%;
   width: 50vh;
   height: auto;
   align-items: center;
-
+  overflow: hidden;
   border-radius: 10px;
 
   color: rgb(200, 74, 1);
@@ -39,56 +41,111 @@
   font-size: 25px;
 }
 
-
-
-.pagination{
-  
+.pagination {
   padding: 2vh;
 }
 
-.pagination__boton{
+.pagination__boton {
   margin: 1vh;
 }
 
-@media screen and (max-width: 425px) {
-  .container {
-   width: 100%;
+
+
+@media screen and (max-width: 1309px) {
+  .cards__card {
+    /* outline: auto;   */
+    margin: 3vh 1vh;
+  }
+}
+
+@media screen and (max-width: 1160px) {
+  .cards__card {
+    /* outline: auto;   */
+    margin: 3vh 1vh;
+    width: 25%;
+    height: 60vh;
+  }
+}
+
+@media screen and (max-width: 945px) {
+  .cards__card {
+    /* outline: auto;   */
+    margin: 3vh 1vh;
+    width: 25%;
+    height: 45vh;
+  }
+}
+
+@media screen and (max-width: 815px) {
+  .cards__card {
+    /* outline: auto;   */
+    margin: 3vh 1vh;
+    width: 25%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .cards__card {
+    /* outline: auto;   */
+    margin: 3vh 1vh;
+    width: 25%;
+    height: auto;
+  }
+  .pagination {
+    padding: 1vh;
   }
   
+  .pagination__boton {
+    margin: 1vh;
+    padding: 1.1vh;
+  }
+}
+
+@media screen and (max-width: 520px) {
   .cards__card {
-    /* outline: auto; */
-    margin: 10px;
-    padding: 20px;
-    width: 50vh;
+    /* outline: auto;   */
+    margin: 3vh 0.1vh;
+    width: 25%;
     height: auto;
- 
   }
-  .pagination{
-    text-align: center;
-    /* outline: auto; */
-    width:  100%;
-    padding: 0;
-  }
+}
 
-  .pagination__boton{
-    margin: 3vh 1vh;
+
+@media screen and (max-width: 420px) {
+  .cards__card {
+    /* outline: auto;   */
+    margin: 3vh 0.1vh;
+    width: 35%;
+    height: auto;
+  }
+  .pagination {
     padding: 1vh;
-    font-size: 2vh;
-    border-radius: 0.5vh;
   }
+  
+  .pagination__boton {
+    margin: 1vh;
+    padding: 1.1vh;
+    font-size: 60%;
+  }
+}
 
+@media screen and (max-width: 340px) {
+  .cards__card {
+    /* outline: auto;   */
+    margin: 2vh 0.1vh;
+    width: 45%;
+    height: auto;
+  }
+  .pagination {
+    padding: 1vh;
+  }
+  
+  .pagination__boton {
+    margin: 0.4vh;
+    padding: 1vh;
+    font-size: 40%;
+  }
 
 }
-@media screen and (max-width: 500px) {
-  .cards__card{
-    /* outline: 3px solid black; */
-    padding: 1vh;
-  }
-
-  
-  
-  }
-
-
-
 
