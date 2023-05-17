@@ -1,5 +1,5 @@
-const app = require("./src/app");
-const { sequelize } = require("./src/db");
+const app = require("./app/src/app");
+const { sequelize } = require("./app/src/db");
 require(`dotenv`).config();
 
 app.listen(process.env.PORT, () => {
