@@ -30,8 +30,8 @@
   overflow: hidden;
   border-radius: 10px;
 
-  color: rgb(200, 74, 1);
-  --color-secundario: #e98f28e2;
+  color: rgba(200, 74, 1, 0.897);
+  --color-secundario: #ed7e00a1;
 
   background-color: var(--color-secundario);
   background-repeat: no-repeat;
@@ -48,8 +48,6 @@
 .pagination__boton {
   margin: 1vh;
 }
-
-
 
 @media screen and (max-width: 1309px) {
   .cards__card {
@@ -95,7 +93,7 @@
   .pagination {
     padding: 1vh;
   }
-  
+
   .pagination__boton {
     margin: 1vh;
     padding: 1.1vh;
@@ -111,7 +109,6 @@
   }
 }
 
-
 @media screen and (max-width: 420px) {
   .cards__card {
     /* outline: auto;   */
@@ -122,7 +119,7 @@
   .pagination {
     padding: 1vh;
   }
-  
+
   .pagination__boton {
     margin: 1vh;
     padding: 1.1vh;
@@ -140,12 +137,10 @@
   .pagination {
     padding: 1vh;
   }
-  
+
   .pagination__boton {
     margin: 0.4vh;
     padding: 1vh;
     font-size: 40%;
   }
-
 }
-

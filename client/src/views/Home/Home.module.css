@@ -387,7 +387,7 @@ ul :nth-child(3) {
 /* =========================  section Franja ==================*/
 
 .home__franja {
-  background-image: linear-gradient(360deg, #a1430082 0%, rgb(255, 111, 0) 100%),
+  background-image: linear-gradient(360deg, #a1430054 0%, rgba(255, 111, 0, 0.675) 100%),
     url(../../../public/div_perro.png);
 
   background-repeat: no-repeat;
@@ -433,7 +433,7 @@ ul :nth-child(3) {
 /* ============================= card section ========================== */
 
 .home__cards {
-  background-image: linear-gradient(360deg, #c25100dc 0%, #a1430050 100%),
+  background-image: linear-gradient(360deg, #c251009e 0%, #a143003e 100%),
     url(../../../public//campo_maiz.jpg);
   background-repeat: no-repeat;
   background-size: cover;

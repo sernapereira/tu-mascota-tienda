@@ -13,7 +13,7 @@ body {
 
 :root {
   --color-primario: #080707;
-  --color-secundario: #ea6200ec;
+  --color-secundario: #ea6200c6;
   --color-neutro: #e7dfd9;
   --color-aux: #7c4c24;
   --color-contraste: #f9954ebb;
@@ -30,7 +30,7 @@ body {
   background-image: linear-gradient(
       360deg,
       #f46d2481 0%,
-      rgba(248, 91, 0, 0.626) 100%
+      rgba(248, 91, 0, 0.5) 100%
     ),
     url(../../public/nav_landing.jpg);
   align-items: center;
