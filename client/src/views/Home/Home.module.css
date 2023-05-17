@@ -50,8 +50,6 @@
   font-size: 30px;
 }
 
-
-
 @media screen and (max-width: 670px) {
   .nav {
     font-size: 2vh;
@@ -63,32 +61,27 @@
     font-size: 2vh;
   }
 
-  .nav__select_enum{
+  .nav__select_enum {
     font-size: 3.5vh;
   }
 }
 
-
 @media screen and (max-width: 500px) {
-
-
   .nav__select {
     margin: 0 2vh;
     padding: 0 2.5vh;
     font-size: 2vh;
   }
 
-  .nav__select_enum{
+  .nav__select_enum {
     font-size: 3.5vh;
     margin: 2vh 0;
   }
 
-  .nav__allSelect{
+  .nav__allSelect {
     flex-direction: column;
-
   }
 }
-
 
 /* ============================= div img section ======================== */
 
@@ -181,19 +174,18 @@ ul :nth-child(3) {
   .home__div {
     justify-content: center;
     height: 85vh;
-    
   }
 
   .home__anuncio {
     background-image: url(../../../public/logoTt.png),
-    linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.808));
+      linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.808));
     width: 100%;
     margin: 30px 0 0 30px;
     font-size: 3vh;
     padding: 2vh;
   }
 
-  ul{
+  ul {
     font-size: 2vh;
   }
 
@@ -209,19 +201,18 @@ ul :nth-child(3) {
   .home__div {
     justify-content: center;
     height: 70vh;
-    
   }
 
   .home__anuncio {
     background-image: url(../../../public/logoTt.png),
-    linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.808));
+      linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.808));
     width: 100%;
     margin: 30px 0 0 30px;
     font-size: 2.5vh;
     padding: 0.5vh;
   }
 
-  ul{
+  ul {
     font-size: 2vh;
     margin: 0;
     padding: 0;
@@ -234,9 +225,41 @@ ul :nth-child(3) {
     margin: 0;
     background-position: bottom;
   }
-
-  
 }
+
+@media screen and (max-width: 380px) {
+  .home__div {
+    justify-content: center;
+    height: auto;
+  }
+  .home__anuncio {
+    text-align: center;
+    width: 100%;
+    height: 55vh;
+    margin: 10% 0 10% 2%;
+   
+    overflow: hidden;
+    font-family: "Bilbo", cursive;
+    font-size: 100%;
+    /* outline: 3px solid red; */
+  }
+
+  ul {
+    width: 100%;
+    font-size: 75%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .home__imagen {
+    width: 30%;
+    height: auto;
+    background-size: cover;
+    margin: 0;
+    background-position: bottom;
+  }
+}
+
 /* =========================  section Franja ==================*/
 
 .home__franja {
@@ -268,6 +291,14 @@ ul :nth-child(3) {
   }
 }
 
+@media screen and (max-width: 380px) {
+.home__franja {
+    font-size: 100%;
+    height: 20vh;
+  }
+}
+
+
 /* ============================= card section ========================== */
 
 .home__cards {
@@ -278,10 +309,7 @@ ul :nth-child(3) {
   width: 100%;
   height: auto;
   padding: 0;
-  
 }
-
-
 
 /* ==================================== contac section ================ */
 

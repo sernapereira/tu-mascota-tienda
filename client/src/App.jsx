@@ -9,6 +9,7 @@ import Panel from "./views/Admin/Panel";
 import axios from "axios";
 import Navbar from "./component/Navbar";
 axios.defaults.baseURL = "https://tu-mascota.up.railway.app";
+// axios.defaults.baseURL = "http://localhost:3002";
 
 //localStorage.removeItem("admin")
 const acceso =
@@ -31,7 +32,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
-        <Route exact path="/home" element={<Home />} />
+        <Route exact path="/" element={<Home />} />
         <Route exact path="/detail/:id" element={<Detail />} />
 
         {acceso ? (

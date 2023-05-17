@@ -1,18 +1,10 @@
-
 import style from "./Navbar.module.css";
 
 const Navbar = () => {
-
-
-
   return (
-   
-   <div className={style.container}>
-      <nav className={ style.nav } >
-      
-       
-    
-        <a href="/home" className={style.nav__logo}>
+    <div className={style.container}>
+      <nav className={style.nav}>
+        <a href="/" className={style.nav__logo}>
           <div className={style.nav__logo}>
             {" "}
             <img
