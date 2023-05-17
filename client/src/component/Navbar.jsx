@@ -16,7 +16,7 @@ const Navbar = () => {
           <div className={style.nav__logo}>
             {" "}
             <img
-              src="../../public/logoTt.png"
+              src="http://res.cloudinary.com/dkw9ck7qv/image/upload/v1684336269/prueba/logoTt_wwvrof.png"
               alt="icono de compañia"
               className={style.nav__img}
             />

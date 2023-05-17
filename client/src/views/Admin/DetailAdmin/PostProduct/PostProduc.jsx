@@ -29,7 +29,7 @@ let uploadImage = async (file) => {
     );
 
     let img = await res.json();
-
+      console.log(img);
     return img.secure_url;
   } catch (error) {
     console.log(error);
