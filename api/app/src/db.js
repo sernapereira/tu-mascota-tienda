@@ -2,16 +2,18 @@ require("dotenv").config();
 const fs = require("fs");
 const path = require("path");
 const { Sequelize, Op } = require("sequelize");
+const {Pool} = require("pg");
 
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
+const { DB_USER, DB_PASSWORD,DB_PORT, DB_HOST, DB_NAME } = process.env;
 
 const sequelize = new Sequelize(
-  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
+  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
   {
     logging: false,
     native: false,
   }
 );
+
 
 //devuelve el nombre del archivo sin la ruta completa
 const basename = path.basename(__filename);
