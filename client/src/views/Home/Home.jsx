@@ -127,7 +127,7 @@ const Home = () => {
         <div className={style.home__contac}>
           <div>
             <img
-              src="../../../public/Tu_Mascota_Tienda-T.png"
+              src="http://res.cloudinary.com/dkw9ck7qv/image/upload/v1684358556/prueba/Tu_Mascota_Tienda-T_te78vl.png"
               alt=""
               className={style.home__contac_imagen}
             />
@@ -139,7 +139,7 @@ const Home = () => {
               <div>
                 <Link to={WhatsAppLink} target="_blank" className={style.Link}>
                   <img
-                    src="../../../public/whatsapp-logo-24.png"
+                    src="http://res.cloudinary.com/dkw9ck7qv/image/upload/v1684358609/prueba/whatsapp-logo-24_hvnyjs.png"
                     alt=""
                     className={style.contac__img}
                   />
@@ -153,7 +153,7 @@ const Home = () => {
                   className={style.Link}
                 >
                   <img
-                    src="../../../public/facebook-logo-24.png"
+                    src="http://res.cloudinary.com/dkw9ck7qv/image/upload/v1684358663/prueba/facebook-logo-24_ahx2vn.png"
                     alt=""
                     className={style.contac__img}
                   />
@@ -170,7 +170,7 @@ const Home = () => {
                   target="_blank"
                 >
                   <img
-                    src="../../../public/instagram-logo-24.png"
+                    src="http://res.cloudinary.com/dkw9ck7qv/image/upload/v1684358698/prueba/instagram-logo-24_ikmnm2.png"
                     alt=""
                     className={style.contac__img}
                   />
@@ -180,7 +180,7 @@ const Home = () => {
               <div>
                 <div className={style.Link}>
                   <img
-                    src="../../../public/phone-call-solid-24.png"
+                    src="http://res.cloudinary.com/dkw9ck7qv/image/upload/v1684358736/prueba/phone-call-solid-24_jdwbko.png"
                     alt=""
                     className={style.contac__img}
                   />
@@ -190,7 +190,7 @@ const Home = () => {
               <div>
                 <div className={style.Link}>
                   <img
-                    src="../../../public/envelope-regular-24.png"
+                    src="http://res.cloudinary.com/dkw9ck7qv/image/upload/v1684358759/prueba/envelope-regular-24_khrsp3.png"
                     alt=""
                     className={style.contac__img}
                   />
