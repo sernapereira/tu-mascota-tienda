@@ -7,7 +7,7 @@ import Detail from "./views/Detail/Detail";
 import InicioForm from "./views/Admin/InicioForm/InicioForm";
 import Panel from "./views/Admin/Panel";
 import axios from "axios";
-import Navbar from "../src/component/navbar/Navbar.jsx";
+import Navbar from "../src/component/navbar/Navbar";
 axios.defaults.baseURL = "https://tu-mascota.up.railway.app";
 
 //localStorage.removeItem("admin")
