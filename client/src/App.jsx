@@ -20,11 +20,11 @@ const acceso =
 
 console.log("router >>>>> ", acceso);
 acceso && window.location.pathname === "/admin"
-  ? window.location.replace("http://localhost:5173/admin/panel")
+  ? window.location.replace("https://tu-mascota-tienda-git-main-serna7a-gmailcom.vercel.app/admin/panel")
   : null;
 
 !acceso && window.location.pathname === "/admin/panel"
-  ? window.location.replace("http://localhost:5173/admin")
+  ? window.location.replace("https://tu-mascota-tienda-git-main-serna7a-gmailcom.vercel.app/admin")
   : null;
 
 function App() {
