@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Bilbo&display=swap");
 
+body {
+  width: 100%;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -7,30 +11,38 @@
 }
 
 .container {
+  width: 100%;
   background-color: white;
 }
 
 /* ================================ nav section ====================*/
 .nav {
+  overflow: hidden;
   background-color: rgba(0, 0, 0, 0.918);
   color: var(--color-neutro);
+  width: 100%;
+  height: auto;
 
   display: flex;
   flex-direction: column;
-  padding: 15px;
+  padding: 3%;
   align-items: center;
 }
 
 .nav__title {
-  margin-bottom: 17px;
+  margin-bottom: 2%;
+  font-size: 230%;
+
+  text-align: center;
   color: var(--color-secundario);
 }
 
 .nav__select {
-  border-radius: 30px;
-  margin: 0px 40px;
+  margin: 3vh;
+  border-radius: 2vh;
   border: none;
-  padding: 10px 20px;
+  padding: 1vh;
+
   text-align: center;
   font-size: 15px;
   background-color: rgba(93, 93, 93, 0.315);
@@ -40,6 +52,7 @@
 
 .nav__allSelect {
   display: flex;
+  justify-content: space-between;
 }
 
 .nav__select_enum {
@@ -47,39 +60,64 @@
   flex-direction: column;
   align-items: center;
   font-family: "Bilbo", cursive;
-  font-size: 30px;
+  font-size: 200%;
 }
 
-@media screen and (max-width: 670px) {
-  .nav {
-    font-size: 2vh;
-  }
-
+@media screen and (max-width: 480px) {
   .nav__select {
-    margin: 0 2vh;
-    padding: 0 2.5vh;
+    margin: 1.6vh;
+    padding: 0.5vh;
     font-size: 2vh;
   }
 
-  .nav__select_enum {
-    font-size: 3.5vh;
+  .nav__title {
+    font-size: 200%;
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 425px) {
   .nav__select {
-    margin: 0 2vh;
-    padding: 0 2.5vh;
-    font-size: 2vh;
+    margin: 1vh;
+    border-radius: 1vh;
+    padding: 0.3vh;
+    font-size: 1.7vh;
+  }
+
+  .nav__title {
+    margin-bottom: 2%;
+    font-size: 150%;
   }
 
   .nav__select_enum {
-    font-size: 3.5vh;
-    margin: 2vh 0;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Bilbo", cursive;
+    font-size: 140%;
   }
+}
 
+@media screen and (max-width: 360px) {
   .nav__allSelect {
     flex-direction: column;
+    margin: 2vh;
+  }
+  .nav__select {
+    margin: 1vh;
+    border-radius: 1vh;
+    padding: 0.3vh;
+    font-size: 1.7vh;
+  }
+
+  .nav__title {
+    margin-bottom: 2%;
+    font-size: 150%;
+  }
+
+  .nav__select_enum {
+    flex-direction: column;
+    align-items: center;
+    font-family: "Bilbo", cursive;
+    font-size: 140%;
   }
 }
 
@@ -94,36 +132,44 @@
   background-size: cover;
   border-top: 1px solid rgba(0, 0, 0, 0.871);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
 
-  height: 700px;
+  height: auto;
 }
 
 .home__anuncio {
-  background-image: url(../../../public/logoTt.png),
-    linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.575));
+  background-image: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.575));
   background-repeat: no-repeat;
   background-position: bottom;
   color: var(--color-secundario);
 
-  border-radius: 10px;
-  width: 90vh;
+  border-radius: 3%;
+  width: 40%;
   height: 90%;
-  margin: 50px 100px;
-  padding: 4vh;
+  margin: 10%;
+  padding: 5%;
   overflow: hidden;
   font-family: "Bilbo", cursive;
-  font-size: 30px;
+  font-size: 180%;
   box-shadow: 0 0 45px rgba(0, 0, 0, 0.896);
+  /* outline: 4px solid red; */
 }
 
 .home__imagen {
-  background-image: url(../../../public//div_imagen.png);
+  /* outline: 4px solid red; */
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: bottom;
+  height: 130vh;
+  margin: 0;
+  width: 40%;
+}
+
+.home__imagen_img {
+  width: 100%;
   height: 100%;
-  width: 70%;
+  object-fit: cover;
 }
 
 ul {
@@ -152,114 +198,172 @@ ul :nth-child(3) {
   list-style-image: url(../../../public/certificado-24.png);
 }
 
-@media screen and (max-width: 768px) {
-  .home__div {
-    justify-content: center;
-  }
-
+@media screen and (max-width: 1350px) {
   .home__anuncio {
-    width: 75%;
-    margin: 30px 0 0 30px;
-  }
-
-  .home__imagen {
     width: 40%;
-    background-size: auto;
-    margin: 0;
-    background-position: bottom;
-  }
-}
-
-@media screen and (max-width: 670px) {
-  .home__div {
-    justify-content: center;
-    height: 85vh;
-  }
-
-  .home__anuncio {
-    background-image: url(../../../public/logoTt.png),
-      linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.808));
-    width: 100%;
-    margin: 30px 0 0 30px;
-    font-size: 3vh;
-    padding: 2vh;
-  }
-
-  ul {
-    font-size: 2vh;
-  }
-
-  .home__imagen {
-    width: 40%;
-    background-size: auto;
-    margin: 0;
-    background-position: bottom;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .home__div {
-    justify-content: center;
     height: 70vh;
-  }
+    margin: 10% 0 2% 5%;
+    padding: 4% 2%;
 
-  .home__anuncio {
-    background-image: url(../../../public/logoTt.png),
-      linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.808));
-    width: 100%;
-    margin: 30px 0 0 30px;
-    font-size: 2.5vh;
-    padding: 0.5vh;
-  }
-
-  ul {
-    font-size: 2vh;
-    margin: 0;
-    padding: 0;
     /* outline: 3px solid red; */
+    font-size: 180%;
+  }
+  ul :nth-child(1) {
+    margin: 6vh 4vh;
+  }
+
+  ul :nth-child(2) {
+    margin: 6vh 4vh;
+  }
+
+  ul :nth-child(3) {
+    margin: 6vh 4vh;
   }
 
   .home__imagen {
-    width: 40%;
-    background-size: auto;
-    margin: 0;
-    background-position: bottom;
+    /* outline: 3px solid red; */
+    height: 130vh;
+    width: 60%;
+    background-size: cover;
+  }
+  .home__imagen_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
-@media screen and (max-width: 400px) {
-  .home__div {
-    justify-content: center;
-    height: auto;
-  }
+@media screen and (max-width: 1130px) {
   .home__anuncio {
-    text-align: center;
+    width: 70%;
+    height: 70vh;
+    margin: 10% 0 2% 2%;
+    padding: 4% 2% 4% 7%;
+  }
+
+  .home__imagen {
+    height: 100vh;
+    width: 65%;
+    background-size: cover;
+  }
+
+  .home__imagen_img {
     width: 100%;
-    height: 55vh;
-    margin: 10% 0 10% 2%;
-   
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .home__anuncio {
+    width: 40%;
+    height: 60vh;
+    margin: 10% 0 0% 2%;
+    padding: 4% 2% 1% 4%;
     overflow: hidden;
     font-family: "Bilbo", cursive;
-    font-size: 100%;
-    /* outline: 3px solid red; */
+    font-size: 120%;
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.896);
+  }
+  ul :nth-child(1) {
+    margin: 5vh 2vh;
   }
 
-  ul {
-    width: 100%;
-    font-size: 65%;
-    margin: 0;
-    padding: 0;
+  ul :nth-child(2) {
+    margin: 5vh 2vh;
+  }
+
+  ul :nth-child(3) {
+    margin: 5vh 2vh;
   }
 
   .home__imagen {
-    width: 30%;
-    height: auto;
+    height: 75vh;
+    width: 60%;
     background-size: cover;
-    margin: 0;
-    background-position: bottom;
+  }
+
+  .home__imagen_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
+@media screen and (max-width: 745px) {
+  .home__anuncio {
+    width: 50%;
+    height: 40vh;
+    margin: 7% 0 0% 2%;
+    padding: 2% 2% 1% 4%;
+
+    font-size: 100%;
+  }
+  ul :nth-child(1) {
+    margin: 3vh 2vh;
+  }
+
+  ul :nth-child(2) {
+    margin: 3vh 2vh;
+  }
+
+  ul :nth-child(3) {
+    margin: 3vh 2vh;
+  }
+
+  .home__imagen {
+    height: 55vh;
+    width: 70%;
+    background-size: cover;
+  }
+}
+
+@media screen and (max-width: 595px) {
+  .home__anuncio {
+    width: 80%;
+    height: 48vh;
+  }
+}
+
+@media screen and (max-width: 445px) {
+  .home__anuncio {
+    width: 90%;
+    height: 49vh;
+    font-size: 90%;
+  }
+
+  .home__imagen {
+    height: 55vh;
+    width: 50%;
+    background-size: cover;
+  }
+}
+
+@media screen and (max-width: 335px) {
+  .home__anuncio {
+    width: 90%;
+    height: 40vh;
+    font-size: 80%;
+    padding: 2% 2% 1% 6%;
+  }
+
+  .home__imagen {
+    height: 45vh;
+    width: 40%;
+    background-size: cover;
+  }
+  ul :nth-child(1) {
+    margin: 3vh 0 0 2vh;
+  }
+
+  ul :nth-child(2) {
+    margin: 3vh 0 0 2vh;
+  }
+
+  ul :nth-child(3) {
+    margin: 3vh 0 0 2vh;
+  }
+}
 /* =========================  section Franja ==================*/
 
 .home__franja {
@@ -278,26 +382,33 @@ ul :nth-child(3) {
   font-family: "Bilbo", cursive;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 780px) {
   .home__franja {
-    font-size: 25px;
+    font-size: 200%;
+    height: 35vh;
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 625px) {
   .home__franja {
-    font-size: 3vh;
+    font-size: 150%;
     height: 30vh;
   }
 }
 
-@media screen and (max-width: 400px) {
-.home__franja {
+@media screen and (max-width: 455px) {
+  .home__franja {
     font-size: 100%;
-    height: 20vh;
+    height: 25vh;
   }
 }
 
+@media screen and (max-width: 300px) {
+  .home__franja {
+    font-size: 75%;
+    height: 18vh;
+  }
+}
 
 /* ============================= card section ========================== */
 
@@ -347,45 +458,40 @@ ul :nth-child(3) {
   margin: 10px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 955px) {
   .home__contac {
     flex-direction: column-reverse;
-    font-size: 25px;
   }
 
   .contac__img {
+    height: auto;
     width: 5%;
+    
   }
 }
 
-@media screen and (max-width: 425px) {
-  .home__contac {
-    flex-direction: column-reverse;
-    font-size: 25px;
+@media screen and (max-width: 650px) {
+  .home__contac_copy{
+    font-size: 50%;
+  }
+  .home__contac_title{
+    font-size: 100%;
   }
 
-  .contac__img {
-    width: 10%;
+  .home__contac_imagen{
+    width: 60%;
+  }
+ }
+
+ @media screen and (max-width: 375px) {
+  .home__contac_copy{
+    font-size: 30%;
+  }
+  .home__contac_title{
+    font-size: 80%;
   }
 
-  .home__contac_imagen {
-    width: 75%;
-    margin-top: 49px;
+  .home__contac_imagen{
+    width: 80%;
   }
-}
-
-@media screen and (max-width: 500px) {
-  .home__contac {
-    flex-direction: column-reverse;
-    font-size: 20px;
-  }
-
-  .contac__img {
-    width: 10%;
-  }
-
-  .home__contac_imagen {
-    width: 75%;
-    margin-top: 49px;
-  }
-}
+ }

@@ -24,11 +24,10 @@ const Home = () => {
     dispatch(getAllDog());
     window.scrollTo(0, 0);
   }, [dispatch]);
-  
+
   useEffect(() => {
     dispatch(filterAllDogs(filters));
   }, [dispatch, filters, dogs]);
-  
 
   const phoneNumber = "+573027315371";
   const message = "Hola mi nombre es :  `   `, >>> !! Quiero informacion ¡¡, ";
@@ -46,13 +45,12 @@ const Home = () => {
     dispatch(filterAllDogs({ ...filters, [name]: value }));
     dispatch(setCurrentPage(1));
   }
-  
+
   return (
     <div className={style.container}>
       <div className={style.home}>
-      
         <div className={style.nav}>
-          <h1 className={style.nav__title}> ! Tu mascota te espera ¡</h1>
+          <p className={style.nav__title}> ! Tu mascota te espera ¡</p>
           <div className={style.nav__allSelect}>
             <div className={style.nav__select_enum}>
               <h3>Razas</h3>
@@ -108,7 +106,13 @@ const Home = () => {
               <li>Certificado de pureza ✔</li>
             </ul>
           </div>
-          <div className={style.home__imagen}></div>
+          <div className={style.home__imagen}>
+            <img
+              src="http://res.cloudinary.com/dkw9ck7qv/image/upload/v1684353920/prueba/div_imagen_tv1q0t.png"
+              alt=""
+              className={style.home__imagen_img}
+            />
+          </div>
         </div>
         <div className={style.home__franja}>
           <h1 className={style.home__franja_title}>
@@ -119,7 +123,6 @@ const Home = () => {
         <div className={style.home__cards}>
           <Cards filterDog={filterDog} />
         </div>
-        
 
         <div className={style.home__contac}>
           <div>
@@ -130,7 +133,7 @@ const Home = () => {
             />
           </div>
           <div>
-            <h1>Contactanos</h1>
+            <h1 className={style.home__contac_title}>Contactanos</h1>
 
             <div className={style.home__redes}>
               <div>
@@ -140,7 +143,7 @@ const Home = () => {
                     alt=""
                     className={style.contac__img}
                   />
-                  <h6> WhatsApp</h6>
+                  <h6 className={style.home__contac_copy}> WhatsApp</h6>
                 </Link>
               </div>
               <div>
@@ -154,7 +157,7 @@ const Home = () => {
                     alt=""
                     className={style.contac__img}
                   />
-                  <h6>Facebook</h6>
+                  <h6 className={style.home__contac_copy}>Facebook</h6>
                 </Link>
               </div>
 
@@ -171,7 +174,7 @@ const Home = () => {
                     alt=""
                     className={style.contac__img}
                   />
-                  <h6>Instagram</h6>
+                  <h6 className={style.home__contac_copy}>Instagram</h6>
                 </Link>
               </div>
               <div>
@@ -181,7 +184,7 @@ const Home = () => {
                     alt=""
                     className={style.contac__img}
                   />
-                  <h6>Cel 3027315371</h6>
+                  <h6 className={style.home__contac_copy}>Cel 3027315371</h6>
                 </div>
               </div>
               <div>
@@ -191,7 +194,7 @@ const Home = () => {
                     alt=""
                     className={style.contac__img}
                   />
-                  <h6>tumascota1103@gmail.com</h6>
+                  <h6 className={style.home__contac_copy}>tumascota1103@gmail.com</h6>
                 </div>
               </div>
             </div>
