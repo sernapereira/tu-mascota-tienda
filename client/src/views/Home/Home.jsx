@@ -5,7 +5,7 @@ import style from "./Home.module.css";
 import { getAllDog } from "../../redux/Actions/dogActions";
 import Cards from "../../component/Cards/Cards";
 import { Link } from "react-router-dom";
-import Navbar from "../../component/navbar/navbar";
+import Navbar from "../../component/navbar/Navbar";
 import { setCurrentPage } from "../../redux/slice/pageSlice";
 import { filterAllDogs } from "../../redux/Actions/filterAction";
 import { getAllRace } from "../../redux/Actions/razaAction";

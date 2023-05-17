@@ -7,7 +7,7 @@ import Detail from "./views/Detail/Detail";
 import InicioForm from "./views/Admin/InicioForm/InicioForm";
 import Panel from "./views/Admin/Panel";
 import axios from "axios";
-axios.defaults.baseURL = "http://localhost:3002";
+axios.defaults.baseURL = "https://tu-mascota.up.railway.app";
 
 //localStorage.removeItem("admin")
 const acceso =
