@@ -7,6 +7,7 @@ import Detail from "./views/Detail/Detail";
 import InicioForm from "./views/Admin/InicioForm/InicioForm";
 import Panel from "./views/Admin/Panel";
 import axios from "axios";
+import Navbar from "./component/navbar/navbar";
 axios.defaults.baseURL = "https://tu-mascota.up.railway.app";
 
 //localStorage.removeItem("admin")
@@ -28,6 +29,7 @@ acceso && window.location.pathname === "/admin"
 function App() {
   return (
     <div className="App">
+      <Navbar />
       <Routes>
         <Route exact path="/home" element={<Home />} />
         <Route exact path="/detail/:id" element={<Detail />} />

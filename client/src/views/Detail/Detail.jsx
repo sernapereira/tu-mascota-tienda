@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import style from "./Detail.module.css";
 import { getDogByIdAction } from "../../redux/Actions/dogActions";
-import Navbar from "../../component/navbar/navbar";
 import { getAllRace } from "../../redux/Actions/razaAction";
 
 const Detail = () => {
@@ -50,7 +49,7 @@ const Detail = () => {
 
   return (
     <div className={style.container}>
-      <Navbar />
+     
       <div className={style.detail}>
         <div className={style.detail__listaImg}>
           {displayedImages?.map((dog, index) => {
