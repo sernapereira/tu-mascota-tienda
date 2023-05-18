@@ -200,6 +200,10 @@ const Home = () => {
             </div>
           </div>
         </div>
+        <Link to={WhatsAppLink} target="_blank"  className={style.contacto}>
+            <h3 className={style.contacto__title}>Escribenos</h3>
+            <img src="http://res.cloudinary.com/dkw9ck7qv/image/upload/v1684358609/prueba/whatsapp-logo-24_hvnyjs.png" alt="" />
+        </Link>
       </div>
     </div>
   );

@@ -161,14 +161,14 @@ body {
   margin-top: 11%;
   margin-left: 10.01%;
   padding-top: 3%;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .home__anuncio:active {
   margin-top: 11%;
   margin-left: 10.01%;
   padding-top: 3%;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .home__imagen {
@@ -183,8 +183,8 @@ body {
 }
 
 .home__imagen:active {
- width: 50%;
- transition: .5s;
+  width: 50%;
+  transition: 0.5s;
 }
 .home__imagen_img {
   width: 100%;
@@ -387,7 +387,11 @@ ul :nth-child(3) {
 /* =========================  section Franja ==================*/
 
 .home__franja {
-  background-image: linear-gradient(360deg, #a1430054 0%, rgba(255, 111, 0, 0.675) 100%),
+  background-image: linear-gradient(
+      360deg,
+      #a1430054 0%,
+      rgba(255, 111, 0, 0.675) 100%
+    ),
     url(../../../public/div_perro.png);
 
   background-repeat: no-repeat;
@@ -486,32 +490,75 @@ ul :nth-child(3) {
   .contac__img {
     height: auto;
     width: 5%;
-    
   }
 }
 
 @media screen and (max-width: 650px) {
-  .home__contac_copy{
+  .home__contac_copy {
     font-size: 50%;
   }
-  .home__contac_title{
+  .home__contac_title {
     font-size: 100%;
   }
 
-  .home__contac_imagen{
+  .home__contac_imagen {
     width: 60%;
   }
- }
+}
 
- @media screen and (max-width: 375px) {
-  .home__contac_copy{
+@media screen and (max-width: 375px) {
+  .home__contac_copy {
     font-size: 30%;
   }
-  .home__contac_title{
+  .home__contac_title {
     font-size: 80%;
   }
 
-  .home__contac_imagen{
+  .home__contac_imagen {
     width: 80%;
   }
- }
+}
+
+.contacto {
+  text-align: center;
+  text-decoration: none;
+  background-color: green;
+  border-radius: 2vh;
+  position: fixed;
+  width: 15vh;
+  height: 10%;
+  bottom: 0;
+  right: 0;
+  margin: 2vh;
+}
+
+.contacto__title {
+  font-size: 90%;
+  padding: 2vh 0 1vh;
+  color: white;
+}
+
+@keyframes movimiento-infinito {
+  100% {
+    transform: translateX(0);
+  }
+  0% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes brillo-infinito {
+  0% {
+    box-shadow: 0 0 5px #58e700;
+  }
+  50% {
+    box-shadow: 0 0 10px #00f410, 0 0 10px #27ea00, 0 0 10px #1ef002, 0 0 10px #26d802;
+  }
+  100% {
+    box-shadow: 0 0 5px #5be300;
+  }
+}
+.contacto {
+  animation: movimiento-infinito 2s linear infinite;
+  animation: brillo-infinito 1s ease-in-out infinite;
+}
