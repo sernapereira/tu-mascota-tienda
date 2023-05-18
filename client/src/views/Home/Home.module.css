@@ -530,17 +530,19 @@ ul :nth-child(3) {
   bottom: 0;
   right: 0;
   margin: 2vh;
+  overflow: hidden;
 }
 
 .contacto__title {
-  font-size: 90%;
-  padding: 2vh 0 1vh;
+  font-size: 100%;
+  padding: 0;
   color: white;
+  width: 350%;
 }
 
 @keyframes movimiento-infinito {
   100% {
-    transform: translateX(0);
+    transform: translateX(-100%);
   }
   0% {
     transform: translateX(100%);
@@ -552,13 +554,17 @@ ul :nth-child(3) {
     box-shadow: 0 0 5px #58e700;
   }
   50% {
-    box-shadow: 0 0 10px #00f410, 0 0 10px #27ea00, 0 0 10px #1ef002, 0 0 10px #26d802;
+    box-shadow: 0 0 20px #00f410, 0 0 20px #27ea00, 0 0 20px #1ef002,
+      0 0 10px #26d802;
   }
   100% {
     box-shadow: 0 0 5px #5be300;
   }
 }
 .contacto {
-  animation: movimiento-infinito 2s linear infinite;
   animation: brillo-infinito 1s ease-in-out infinite;
+}
+
+.contacto__title {
+  animation: movimiento-infinito 10s linear infinite;
 }

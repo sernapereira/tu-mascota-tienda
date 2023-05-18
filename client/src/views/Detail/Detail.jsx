@@ -48,6 +48,9 @@ const Detail = () => {
   return (
     <div className={style.container}>
       <div className={style.detail}>
+        <Link to="/" className={style.detail__listaImg_atras}>
+          Atras
+        </Link>
         <div className={style.detail__listaImg}>
           {displayedImages?.map((dog, index) => {
             return (
@@ -200,6 +203,10 @@ const Detail = () => {
           </div>
         </div>
       </div>
+      <Link to={WhatsAppLink} target="_blank"  className={style.contacto}>
+            <h3 className={style.contacto__title}>!Manejamos precios unicos¡ Escribenos</h3>
+            <img src="http://res.cloudinary.com/dkw9ck7qv/image/upload/v1684358609/prueba/whatsapp-logo-24_hvnyjs.png" alt="" />
+        </Link>
     </div>
   );
 };

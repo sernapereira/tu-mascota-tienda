@@ -17,7 +17,7 @@ const Home = () => {
   const [filters, setFilters] = useState({
     raza: "",
     genero: "",
-    tamaño: "",
+    tamano: "",
   });
 
   useEffect(() => {
@@ -78,20 +78,21 @@ const Home = () => {
                 <option value="">Todos</option>
                 <option value="hembra">Hembra</option>
                 <option value="macho">Macho</option>
+                <option value="macho y hembra">Macho y Hembra</option>
               </select>
             </div>
             <div className={style.nav__select_enum}>
               <h3>Tamaños</h3>
               <select
-                name="tamaño"
+                name="tamano"
                 className={style.nav__select}
                 onChange={(e) => handlerFilter(e)}
               >
                 <option value="">Todos</option>
-                <option value="mini">De raza Mini</option>
-                <option value="pequenias">De raza Pequeña</option>
-                <option value="medianas">De raza Medianas</option>
-                <option value="grande">De raza Grandes</option>
+                <option value="mini">Raza Mini</option>
+                <option value="pequenias">Raza Pequeña</option>
+                <option value="medianas">Raza Medianas</option>
+                <option value="grande">Raza Grandes</option>
               </select>
             </div>
           </div>
@@ -194,15 +195,22 @@ const Home = () => {
                     alt=""
                     className={style.contac__img}
                   />
-                  <h6 className={style.home__contac_copy}>tumascota1103@gmail.com</h6>
+                  <h6 className={style.home__contac_copy}>
+                    tumascota1103@gmail.com
+                  </h6>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <Link to={WhatsAppLink} target="_blank"  className={style.contacto}>
-            <h3 className={style.contacto__title}>Escribenos</h3>
-            <img src="http://res.cloudinary.com/dkw9ck7qv/image/upload/v1684358609/prueba/whatsapp-logo-24_hvnyjs.png" alt="" />
+        <Link to={WhatsAppLink} target="_blank" className={style.contacto}>
+          <h3 className={style.contacto__title}>
+            !Manejamos precios unicos¡ Escribenos
+          </h3>
+          <img
+            src="http://res.cloudinary.com/dkw9ck7qv/image/upload/v1684358609/prueba/whatsapp-logo-24_hvnyjs.png"
+            alt=""
+          />
         </Link>
       </div>
     </div>

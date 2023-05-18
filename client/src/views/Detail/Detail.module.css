@@ -36,8 +36,9 @@ body {
 
 .detail__listaImg {
   /* outline: 3px solid rgb(17, 255, 0);  */
+ 
   width: 36%;
-  height: 100%;
+  height: 92vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,6 +46,7 @@ body {
 
 .detail__figure_img {
   /* outline: 3px solid rgb(0, 102, 255);  */
+  margin-top: 2vh;
   background-color: white;
   width: 100%;
   height: 80%;
@@ -108,7 +110,7 @@ body {
 .detail__prev {
   height: 40px;
   border: none;
-  margin: 10px 90px;
+  margin: 3vh 3vh;
 }
 
 .detail__flecha_prev {
@@ -449,4 +451,95 @@ body {
     height: 78vh;
     transition: 0.2s;
   }
+}
+
+.detail__listaImg_atras{
+  text-align: center;
+  width: 10%;
+  /* height: 5vh; */
+  text-decoration: none;
+  color: black;
+  padding: 1vh 3%;
+  background-color: white;
+  border-radius: 1vh;
+  margin: 6vh 50%;
+  font-size: 120%;
+  box-shadow: 0 10px 45px rgba(0, 0, 0, 0.333);
+  
+}
+
+@media screen and (max-width: 980px) {
+ .detail__listaImg_atras{
+  width: 15%;
+ }
+}
+
+@media screen and (max-width: 600px) {
+  .detail__listaImg_atras{
+   width: 25%;
+   margin: 0.1vh 25vh;
+  }
+ }
+
+ @media screen and (max-width: 500px) {
+  .detail__listaImg_atras{
+   width: 25%;
+   margin: 0 20vh;
+  }
+ }
+
+ .contacto {
+  text-align: center;
+  text-decoration: none;
+  background-color: green;
+  border-radius: 2vh;
+  position: fixed;
+  width: 15vh;
+  height: 10%;
+  bottom: 0;
+  right: 0;
+  margin: 2vh;
+
+  overflow: hidden;
+}
+
+ .contacto__title {
+  font-size: 100%;
+  padding:  0  ;
+  color: white;
+  width: 350%;
+}
+
+
+ @keyframes movimiento-infinito {
+  100% {
+    transform: translateX(-100%);
+   
+  }
+  0% {
+    transform: translateX(80%);
+  
+  }
+}
+
+@keyframes brillo-infinito {
+  0% {
+    box-shadow: 0 0 5px #58e700;
+  }
+  50% {
+    box-shadow: 0 0 20px #00f410, 0 0 20px #27ea00, 0 0 20px #1ef002, 0 0 20px #26d802;
+  }
+  100% {
+    box-shadow: 0 0 5px #5be300;
+  }
+}
+.contacto__title {
+  animation: movimiento-infinito 10s linear infinite;
+  
+
+}
+
+.contacto {
+  animation: movimiento-infinito 1s linear infinite;
+  animation: brillo-infinito 1s ease-in-out infinite;
 }

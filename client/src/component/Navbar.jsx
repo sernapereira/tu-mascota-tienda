@@ -1,4 +1,6 @@
+import { Link, useParams } from "react-router-dom";
 import style from "./Navbar.module.css";
+import { useState } from "react";
 
 const Navbar = () => {
   return (
