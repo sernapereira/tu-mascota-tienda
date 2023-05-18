@@ -148,6 +148,7 @@ body {
 
   font-family: "Open Sans", sans-serif;
   text-align: center;
+  user-select: none;
 }
 
 .detail__title {
@@ -234,6 +235,7 @@ body {
   /* outline: 3px solid red; */
   width: 30%;
   margin-bottom: 30vh;
+  
 }
 
 .Link {
@@ -278,6 +280,7 @@ body {
 
   background-color: white;
   box-shadow: 0 10px 45px rgba(0, 0, 0, 0.333);
+  user-select: none;
 }
 
 .raza__title {
@@ -377,8 +380,8 @@ body {
     padding: 2.5vh;
     font-weight: 700;
     padding: 30px;
-    font-size: 2.5vh;
-    text-align: justify;
+    font-size: 2vh;
+    /* text-align: justify; */
   }
 }
 

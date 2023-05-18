@@ -37,19 +37,16 @@ const Detail = () => {
   //////////////////////////////////////////////
   useEffect(() => {
     dispatch(getAllRace());
-   
   }, [dispatch]);
 
   useEffect(() => {
     dispatch(getDogByIdAction(id));
-   
   }, [dispatch]);
 
   const displayedImages = images?.slice(position, position + 1);
 
   return (
     <div className={style.container}>
-     
       <div className={style.detail}>
         <div className={style.detail__listaImg}>
           {displayedImages?.map((dog, index) => {
@@ -71,7 +68,7 @@ const Detail = () => {
               className={style.detail__prev}
             >
               <img
-                src="../../../public/avance-rapido.png"
+                src="http://res.cloudinary.com/dkw9ck7qv/image/upload/v1684371282/prueba/avance-rapido_xubi3p.png"
                 alt=""
                 className={style.detail__flecha_prev}
               />
@@ -81,7 +78,7 @@ const Detail = () => {
               className={style.detail__prev}
             >
               <img
-                src="../../../public/avance-rapido.png"
+                src="http://res.cloudinary.com/dkw9ck7qv/image/upload/v1684371282/prueba/avance-rapido_xubi3p.png"
                 alt=""
                 className={style.detail__flecha_next}
               />
@@ -112,7 +109,7 @@ const Detail = () => {
             <div>
               <Link to={WhatsAppLink} target="_blank" className={style.Link}>
                 <img
-                  src="../../../public/whatsapp-logo-24.png"
+                  src="http://res.cloudinary.com/dkw9ck7qv/image/upload/v1684358609/prueba/whatsapp-logo-24_hvnyjs.png"
                   alt=""
                   className={style.contac__img}
                 />
@@ -126,7 +123,7 @@ const Detail = () => {
                 className={style.Link}
               >
                 <img
-                  src="../../../public/facebook-logo-24.png"
+                  src="http://res.cloudinary.com/dkw9ck7qv/image/upload/v1684358663/prueba/facebook-logo-24_ahx2vn.png"
                   alt=""
                   className={style.contac__img}
                 />
@@ -143,7 +140,7 @@ const Detail = () => {
                 target="_blank"
               >
                 <img
-                  src="../../../public/instagram-logo-24.png"
+                  src="http://res.cloudinary.com/dkw9ck7qv/image/upload/v1684358698/prueba/instagram-logo-24_ikmnm2.png"
                   alt=""
                   className={style.contac__img}
                 />
@@ -153,7 +150,7 @@ const Detail = () => {
             <div>
               <div className={style.Link}>
                 <img
-                  src="../../../public/phone-call-solid-24.png"
+                  src="http://res.cloudinary.com/dkw9ck7qv/image/upload/v1684358736/prueba/phone-call-solid-24_jdwbko.png"
                   alt=""
                   className={style.contac__img}
                 />
@@ -163,7 +160,7 @@ const Detail = () => {
             <div>
               <div className={style.Link}>
                 <img
-                  src="../../../public/envelope-regular-24.png"
+                  src="http://res.cloudinary.com/dkw9ck7qv/image/upload/v1684358759/prueba/envelope-regular-24_khrsp3.png"
                   alt=""
                   className={style.contac__img}
                 />
@@ -173,25 +170,35 @@ const Detail = () => {
           </div>
         </div>
         <div className={style.raza}>
-          <h2 className={style.raza__title}>{razaDetail && razaDetail.nameRaza}</h2>
-          <h3 className={style.raza__reseña} >{razaDetail && razaDetail.reseña}</h3>
-          {
-            razaDetail && razaDetail.cualidades.map((el, index)=> (
-              <li key={index} className={style.raza__cualidad}>{el.cualidad}</li>
-            ))
-          }
+          <h2 className={style.raza__title}>
+            {razaDetail && razaDetail.nameRaza}
+          </h2>
+          <h3 className={style.raza__reseña}>
+            {razaDetail && razaDetail.reseña}
+          </h3>
+          {razaDetail &&
+            razaDetail.cualidades.map((el, index) => (
+              <li key={index} className={style.raza__cualidad}>
+                {el.cualidad}
+              </li>
+            ))}
           <div className={style.raza__galeria}>
-            <h2 className={style.raza__title}>Imagenes de la raza {razaDetail && razaDetail.nameRaza}</h2>
+            <h2 className={style.raza__title}>
+              Imagenes de la raza {razaDetail && razaDetail.nameRaza}
+            </h2>
             <figure className={style.raza__figure}>
-              {
-                razaDetail && razaDetail.imagenRaza.map((el, index) => (
-                  <img src={el.image} alt="" key={index} className={style.raza__img}/>
-                ))
-              }
+              {razaDetail &&
+                razaDetail.imagenRaza.map((el, index) => (
+                  <img
+                    src={el.image}
+                    alt=""
+                    key={index}
+                    className={style.raza__img}
+                  />
+                ))}
             </figure>
           </div>
         </div>
-    
       </div>
     </div>
   );
