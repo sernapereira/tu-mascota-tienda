@@ -7,6 +7,7 @@ import Promo from "./Promociones/Promo";
 const Panel = () => {
   const cerrarHandler = () => {
     localStorage.removeItem("admin");
+    // window.location.replace("http://localhost:5173/admin");
     window.location.replace("https://tu-mascota-tienda-git-main-serna7a-gmailcom.vercel.app/admin");
   };
 

@@ -46,6 +46,7 @@ const InicioForm = () => {
   ///////////////////////////////////////
 
   if (acceso === true) {
+    // window.location.replace("http://localhost:5173/admin/panel");
     window.location.replace("https://tu-mascota-tienda-git-main-serna7a-gmailcom.vercel.app/admin/panel");
   }
 

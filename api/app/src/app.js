@@ -15,10 +15,10 @@ app.use(cookieParser());
 
 app.use((req, res, next) => {
   // res.header("Access-Control-Allow-Origin", "http://localhost:5173");
-    res.header(
-      "Access-Control-Allow-Origin",
-      "https://tu-mascota-tienda-git-main-serna7a-gmailcom.vercel.app"
-    );
+  res.header(
+    "Access-Control-Allow-Origin",
+    "https://tu-mascota-tienda-git-main-serna7a-gmailcom.vercel.app"
+  );
   res.header("Access-Control-Allow-Credentials", "true");
   res.header(
     "Access-Control-Allow-Headers",
