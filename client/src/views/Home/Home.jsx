@@ -126,6 +126,15 @@ const Home = () => {
         </div>
 
         <div className={style.home__contac}>
+          <Link to={"http://localhost:5173/admin"} target="_blank">
+            <div>
+              <img
+                src="http://res.cloudinary.com/dkw9ck7qv/image/upload/v1684753416/prueba/herramientas_znrbvd.png"
+                alt=""
+              />
+            </div>
+          </Link>
+
           <div>
             <img
               src="http://res.cloudinary.com/dkw9ck7qv/image/upload/v1684358556/prueba/Tu_Mascota_Tienda-T_te78vl.png"
@@ -133,6 +142,7 @@ const Home = () => {
               className={style.home__contac_imagen}
             />
           </div>
+
           <div>
             <h1 className={style.home__contac_title}>Contactanos</h1>
 

@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+}
+
+.product {
+    width: 100%;
+    height: 100%;
+  display: flex;
+  /* outline: 2px solid red; */
+  overflow: hidden;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product__card {
+  /* outline: 4px solid rgb(251, 255, 0); */
+  width: 25%;
+  margin: 5vh 0 0 2vh;
+
+  
+  height: auto;
+  overflow: hidden;
+}
+
+.product__figure {
+  width: 100%;
+  height: 40vh;
+  overflow: hidden;
+  /* outline: 2px solid red; */
+}
+
+.product__card_img {
+    border-radius: 2vh 2vh 0 0 ;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product__text{
+    background-color: white;
+    border-radius: 0 0 2vh 2vh;
+    padding: 2vh;
+}

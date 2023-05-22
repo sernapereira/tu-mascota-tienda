@@ -91,7 +91,8 @@ const InicioForm = () => {
               onChange={(e) => changeHandler(e)}
               value={form.username}
               name="username"
-            />
+              className={style.form__input}
+              />
           </div>
           <div className={style.form__inputPassword}>
             <input
@@ -100,6 +101,7 @@ const InicioForm = () => {
               onChange={(e) => changeHandler(e)}
               value={form.userPassword}
               name="userPassword"
+              className={style.form__input}
             />
           </div>
 
@@ -112,7 +114,7 @@ const InicioForm = () => {
         </form>
       </div>
 
-      <form></form>
+      
     </div>
   );
 };

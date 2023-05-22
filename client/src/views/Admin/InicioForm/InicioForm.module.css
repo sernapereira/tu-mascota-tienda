@@ -1,5 +1,5 @@
 * {
-    /* outline: 2px solid red; */
+  /* outline: 2px solid red; */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -9,7 +9,7 @@
   background-color: rgba(255, 255, 255, 0.318);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 
-    /* outline: 2px solid red; */
+  /* outline: 2px solid red; */
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -17,11 +17,32 @@
   align-items: center;
   width: 90%;
   padding: 70px;
-  
+
   margin: 50px auto;
   transition: 1s;
-  
 }
+
+@media screen and (max-width: 950px) {
+  .container {
+    width: 95%;
+    padding: 1vh;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    height: 70vh;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .container {
+    height: 75vh;
+    justify-content: center;
+  }
+}
+
+/* ============================== form ============================ */
 
 .form {
   display: flex;
@@ -35,7 +56,35 @@
   margin: 30px;
 }
 
-input {
+@media screen and (max-width: 700px) {
+  .form {
+    padding: 2vh;
+    width: 90%;
+    margin: 2vh 0;
+  }
+}
+@media screen and (max-width: 580px) {
+  .form {
+    margin: 4vh 0;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .form {
+    margin: 2vh 0;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .form {
+    margin: 1vh 0;
+    border-radius: 1vh;
+  }
+}
+
+/* ===================================== input ====================== */
+
+.form__input {
   font-size: 30px;
   border: none;
   border-radius: 5px;
@@ -46,38 +95,113 @@ input {
   outline: none;
 }
 
-.form__inputNombre{
-    width: 100%;
+.form__inputNombre {
+  width: 100%;
 }
 
-.form__inputPassword{
-    width: 100%;
+.form__inputPassword {
+  width: 100%;
 }
 
+@media screen and (max-width: 700px) {
+  .form__input {
+    font-size: 3vh;
+    border: none;
+    border-radius: 1vh;
+    background-color: rgb(201, 201, 201);
+    margin: 2vh;
+    padding: 1vh;
+    width: 90%;
+    outline: none;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .form__input {
+    font-size: 1.5vh;
+    border-radius: 0.6vh;
+    margin: 1vh;
+    padding: 1vh;
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .form__input {
+    font-size: 1vh;
+    border-radius: 0.4vh;
+    margin: 1vh;
+    padding: 1vh;
+    width: 90%;
+  }
+}
+
+/*  ============================= message =========================== */
+
+.message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .message__img {
   width: 40px;
   margin: 20px;
 }
 
-.message {
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  
- 
+@media screen and (max-width: 580px) {
+  .message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5vh;
+  }
+  .message__img {
+    width: 3vh;
+    margin: 2vh;
+  }
 }
 
-.form__boton{
-    padding: 10px 70px;
-    border-radius: 10px;
-    border: none;
-    background-color: rgba(39, 125, 196, 0.737);
+@media screen and (max-width: 410px) {
+  .message {
+    font-size: 1.2vh;
+  }
 }
 
-.form__boton2{
+@media screen and (max-width: 340px) {
+  .message {
+    font-size: 1vh;
+    margin: 2vh 0;
+  }
+}
+
+/* ============================= boton ========================== */
+
+.form__boton {
+  padding: 10px 70px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(39, 125, 196, 0.737);
+}
+
+.form__boton2 {
   padding: 10px 70px;
   border-radius: 10px;
   border: none;
   background-color: rgba(39, 196, 57, 0.737);
+}
+
+@media screen and (max-width: 580px) {
+  .form__boton {
+    padding: 1vh 4vh;
+    border-radius: 1vh;
+    font-size: 1.5vh;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .form__boton {
+    padding: 0.3vh 4vh;
+    border-radius: 0.5vh;
+    font-size: 1vh;
+  }
 }

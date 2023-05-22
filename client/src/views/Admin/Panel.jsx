@@ -72,11 +72,17 @@ const Panel = () => {
         </div>
       </div>
       <div className={style.panel__gestion}>
-        <div>
+       
           {!Detail && !race && !promo ? (
-            <img src="../../../../public/Tu_Mascota_Tienda-T.png" alt="" />
+             <div className={style.panel__imagen}>
+            <img
+              src="http://res.cloudinary.com/dkw9ck7qv/image/upload/v1684759166/prueba/Tu_Mascota_Tienda-T_cnoz0k.png"
+              alt=""
+              className={style.panel__imagen_img}
+            />
+             </div>
           ) : null}
-        </div>
+       
 
         <div className={style.panel__gestion_pagina}>
           {(Detail && <DetailAdmin />) ||

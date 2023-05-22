@@ -1,12 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@300;400;500;600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   /* outline: 2px solid black;     */
   cursor: default;
-
- 
 }
 
 :root {
@@ -19,36 +17,41 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
- 
-  font-family: 'Cormorant Infant', serif;
+
+  font-family: "Cormorant Infant", serif;
 }
+
+@media screen and (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ============================= panel ======================================= */
 
 .panel {
   display: flex;
   height: 100vh;
-  width: 20%;
+  width: 19%;
   padding: 1%;
   flex-direction: column;
-  margin: 10px 0 10px 10px;
-  border-radius: 20px;
+  margin: 2vh 0 2vh 2vh;
+  border-radius: 10px;
   align-items: center;
 
   background-color: var(--color-componente);
   box-shadow: var(--box-shadow);
-  
 }
 
 .panel__card_boton {
   display: flex;
   height: 100vh;
+  width: 100%;
+  /* outline: 2px solid rgb(55, 255, 0); */
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
- 
-}
-
-.panel__card_boton {
-  width: 100%;
 }
 
 .panel__boton {
@@ -79,16 +82,116 @@
   font-family: inherit;
 }
 
+@media screen and (max-width: 1100px) {
+  .panel {
+    height: 100%;
+    padding: 1% 0;
+    font-size: 2vh;
+  }
+
+  .panel__boton {
+    font-size: 2vh;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .panel {
+    width: 95%;
+    height: auto;
+    padding: 1% 0;
+    font-size: 2vh;
+    margin: 2vh 0;
+  }
+
+  .panel__card_boton {
+    height: auto;
+    margin: 3% 0 1% 0;
+    /* outline: 2px solid rgb(55, 255, 0); */
+    flex-direction: row;
+  }
+
+  .panel__boton {
+    width: 20%;
+    padding: 1%;
+    font-size: 2.5vh;
+  }
+
+  .panel__botonClose {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .panel__boton {
+    width: 20%;
+    padding: 1%;
+    font-size: 1.6vh;
+  }
+
+  .panel__botonClose {
+    width: 25%;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .panel {
+    font-size: 1.5vh;
+  }
+
+  .panel__boton {
+    width: 20%;
+    padding: 1%;
+    font-size: 1.3vh;
+  }
+
+  .panel__botonClose {
+    width: 30%;
+    font-size: 1.5vh;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .panel__card_boton {
+    /* outline: 2px solid rgb(55, 255, 0); */
+    flex-direction: column;
+  }
+  .panel__boton {
+    width: 35%;
+    align-items: center;
+    flex-direction: column;
+    margin: 2%;
+
+    /* outline: 2px solid red;     */
+  }
+}
+
+@media screen and (max-width: 300px) {
+
+  .panel__boton {
+    width: 35%;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.1vh;
+    
+
+    /* outline: 2px solid red;     */
+  }
+}
+/* ========================================== gestion ======================= */
+
+.panel__imagen {
+  margin: 22% 0 0 0;
+}
+
 .panel__gestion {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 1%;
-  width: 70%;
+  width: 77%;
   align-items: center;
-  /* outline: 2px solid rgb(55, 255, 0); */
   background-color: var(--color-componente);
-  margin: 30px 60px 30px 0;
+  margin: 2vh 2vh 2vh 0;
   border-radius: 10px;
   box-shadow: var(--box-shadow);
   font-family: inherit;
@@ -96,7 +199,66 @@
 
 .panel__gestion_pagina {
   width: 100%;
-  /* outline: 2px solid red;     */
   align-items: center;
   font-family: inherit;
+}
+
+@media screen and (max-width: 1100px) {
+  .panel__gestion {
+    width: 74%;
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .panel__gestion {
+    width: 95%;
+    margin: 0 0 2vh 0;
+    overflow: hidden;
+    padding: 0;
+    height: 80vh;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .panel__imagen {
+    text-align: center;
+    width: 100%;
+    /* outline: 3px solid red; */
+    height: 100%;
+    margin: auto 1vh;
+  }
+
+  .panel__imagen_img {
+    width: 60%;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .panel__imagen {
+    height: 100vh;
+    /* outline: 3px solid red; */
+    height: 100%;
+    margin: auto 1vh;
+  }
+
+  .panel__imagen_img {
+    width: 60%;
+    object-fit: cover;
+  }
+
+  .panel__gestion {
+    height: 80vh;
+  }
+}
+
+
+@media screen and (max-width: 410px) {
+ 
+  
+
+  .panel__gestion {
+    height: 60vh;
+  }
 }
