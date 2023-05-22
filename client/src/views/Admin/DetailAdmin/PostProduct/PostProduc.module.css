@@ -7,41 +7,103 @@
 
 .container {
   height: 100%;
-  /* outline: 3px solid red; */
+  width: 100%;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  text-align: center;
+  height: auto;
   padding: 3%;
 }
 
-.form {
-  /* outline: 2px solid red; */
-  display: flex;
+.panel {
+  /* outline: 2px solid rgb(255, 132, 0); */
+  width: 100%;
 }
 
-.form__boton {
-  background-color: rgba(0, 128, 0, 0.423);
+/* =================================== form ================================= */
+.form {
+  width: 100%;
+  margin: 2vh 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .form__input {
+  /* outline: 3px solid red; */
   width: 80%;
+  border: none;
   height: 100%;
+  margin: 2%;
+  padding: 1.5%;
+  border-radius: 1vh;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  outline: none;
 }
 
-.form__figure{
+.form__figure {
+  background-color: white;
   display: flex;
-  flex-direction: column;
-  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 80%;
   padding: 10px;
   align-items: center;
 }
 
-.form__img{
-width: 40%;
+.form__img {
+  width: 20%;
+  height: 30vh;
+  object-fit: cover;
+  margin: 2vh 2vh;
 }
 
-.creado{
+/* ================================= select ============================ */
+.form__selectContainer {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.form__select {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  padding: 1vh 2vh;
+  text-align: center;
+  border: none;
+  border-radius: 1vh;
+}
+
+.form__seelcionado {
+  margin: 2vh;
+  font-size: 1.8vh;
+}
+
+.form__file {
+  /* outline: auto; */
+  /* height: 50%; */
+  width: 80%;
+  border-radius: 1vh 1vh 0 0;
+  border: none;
+  padding: 2vh;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ================================== boton subir ============================== */
+
+.form__boton {
+  background-color: rgba(0, 128, 0, 0.423);
+  padding: 2vh 4vh;
+  border: none;
+  border-radius: 1vh;
+}
+
+/* =================================== mensaje ============================ */
+
+.creado {
   background-color: rgba(0, 128, 0, 0.438);
   text-align: center;
   width: 70%;

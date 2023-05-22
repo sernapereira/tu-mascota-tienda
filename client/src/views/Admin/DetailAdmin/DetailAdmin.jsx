@@ -31,14 +31,26 @@ const DetailAdmin = () => {
     <div className={style.container}>
       <div className={style.nav}>
         <h2>Producto</h2>
-        <div className={style.card__boton}>
-          <button onClick={(e) => openComponen(e)} value="Product">
+        <div className={style.nav__botones}>
+          <button
+            onClick={(e) => openComponen(e)}
+            value="Product"
+            className={style.nav__boton}
+          >
             Productos
           </button>
-          <button onClick={(e) => openComponen(e)} value="Post">
+          <button
+            onClick={(e) => openComponen(e)}
+            value="Post"
+            className={style.nav__boton}
+          >
             Crear
           </button>
-          <button onClick={(e) => openComponen(e)} value="Gestion">
+          <button
+            onClick={(e) => openComponen(e)}
+            value="Gestion"
+            className={style.nav__boton}
+          >
             Gestion
           </button>
         </div>

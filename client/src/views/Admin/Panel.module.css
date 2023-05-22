@@ -118,6 +118,7 @@
 
   .panel__botonClose {
     width: 30%;
+    margin: 4% 2%;
   }
 }
 
@@ -156,23 +157,19 @@
     flex-direction: column;
   }
   .panel__boton {
-    width: 35%;
+    width: 40%;
     align-items: center;
     flex-direction: column;
-    margin: 2%;
+    margin: 3%;
+    font-size: 2vh;
 
     /* outline: 2px solid red;     */
   }
 }
 
 @media screen and (max-width: 300px) {
-
   .panel__boton {
-    width: 35%;
-    align-items: center;
-    flex-direction: column;
-    font-size: 1.1vh;
-    
+    font-size: 1.7vh;
 
     /* outline: 2px solid red;     */
   }
@@ -216,7 +213,7 @@
     margin: 0 0 2vh 0;
     overflow: hidden;
     padding: 0;
-    height: 80vh;
+    height: auto;
   }
 }
 
@@ -237,7 +234,7 @@
 
 @media screen and (max-width: 460px) {
   .panel__imagen {
-    height: 100vh;
+    /* height: 100vh; */
     /* outline: 3px solid red; */
     height: 100%;
     margin: auto 1vh;
@@ -246,19 +243,5 @@
   .panel__imagen_img {
     width: 60%;
     object-fit: cover;
-  }
-
-  .panel__gestion {
-    height: 80vh;
-  }
-}
-
-
-@media screen and (max-width: 410px) {
- 
-  
-
-  .panel__gestion {
-    height: 60vh;
   }
 }

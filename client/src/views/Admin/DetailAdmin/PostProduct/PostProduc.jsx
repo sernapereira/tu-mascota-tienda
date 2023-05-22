@@ -29,7 +29,7 @@ let uploadImage = async (file) => {
     );
 
     let img = await res.json();
-      console.log(img);
+    console.log(img);
     return img.secure_url;
   } catch (error) {
     console.log(error);
@@ -89,7 +89,6 @@ const PostProduct = () => {
       const cambiarEstadoDespuesDeTiempo = setTimeout(() => {
         setStatusco(false);
         dispatch(postDog({ status: 400 }));
-        
       }, 5000);
 
       return () => clearTimeout(cambiarEstadoDespuesDeTiempo);
@@ -104,73 +103,97 @@ const PostProduct = () => {
   return (
     <div className={style.container}>
       {!statusco ? (
-        <div>
+        <div className={style.panel}>
           <div>
             <div>
               <h2>Publicar Nuevo Producto</h2>
             </div>
           </div>
           <form className={style.form}>
-            <div className={style.form__input}>
-              <input
-                onChange={(e) => changeHandler(e)}
-                type="text"
-                placeholder="Nombre mascota"
-                name="name"
-              />
-              <input
-                onChange={(e) => changeHandler(e)}
-                type="number"
-                placeholder="Meses de vida"
-                name="edad"
-              />
+            <input
+              onChange={(e) => changeHandler(e)}
+              type="text"
+              placeholder="Nombre mascota"
+              name="name"
+              className={style.form__input}
+            />
+            <input
+              onChange={(e) => changeHandler(e)}
+              type="number"
+              placeholder="Meses de vida"
+              name="edad"
+              className={style.form__input}
+            />
 
-              <select name="genero" onChange={(e) => changeHandler(e)}>
-                <option value="">genero</option>
-                <option value="macho">Macho</option>
-                <option value="hembra">Hembra</option>
-                <option value="macho y hembra">Macho y Hembra</option>
-              </select>
+            <input
+              onChange={(e) => changeHandler(e)}
+              type="text"
+              placeholder="Raza"
+              name="raza"
+              className={style.form__input}
+            />
+            <input
+              onChange={(e) => changeHandler(e)}
+              type="text"
+              placeholder="color"
+              name="color"
+              className={style.form__input}
+            />
 
-              <input
-                onChange={(e) => changeHandler(e)}
-                type="text"
-                placeholder="Raza"
-                name="raza"
-              />
-              <input
-                onChange={(e) => changeHandler(e)}
-                type="text"
-                placeholder="color"
-                name="color"
-              />
+            <div className={style.form__selectContainer}>
+              <div>
+                <select
+                  name="genero"
+                  onChange={(e) => changeHandler(e)}
+                  className={style.form__select}
+                >
+                  <option value="">genero</option>
+                  <option value="macho">Macho</option>
+                  <option value="hembra">Hembra</option>
+                  <option value="macho y hembra">Macho y Hembra</option>
+                </select>
+                <div className={style.form__seelcionado}>
+                  <h2>{form.genero}</h2>
+                </div>
+              </div>
 
-              <select name="tamano" onChange={(e) => changeHandler(e)}>
-                <option value="">Tamaño</option>
-                <option value="mini">Mini</option>
-                <option value="pequenias">Pequeños</option>
-                <option value="medianas">Medianas</option>
-                <option value="grande">Grandes</option>
-              </select>
-
-              <input
-                type="file"
-                placeholder="Imagen"
-                onChange={(e) => manejarCambioArchivo(e)}
-              />
-
-              <figure className={style.form__figure}>
-                {form.imagen
-                  ? form.imagen.map((el, index) => (
-                      <img
-                        src={el.image}
-                        className={style.form__img}
-                        key={index}
-                      />
-                    ))
-                  : null}
-              </figure>
+              <div>
+                <select
+                  name="tamano"
+                  onChange={(e) => changeHandler(e)}
+                  className={style.form__select}
+                >
+                  <option value="">Tamaño</option>
+                  <option value="mini">Mini</option>
+                  <option value="pequenias">Pequeños</option>
+                  <option value="medianas">Medianas</option>
+                  <option value="grande">Grandes</option>
+                </select>
+                <div className={style.form__seelcionado}>
+                <h2>{form.tamano}</h2>
+                </div>
+              </div>
             </div>
+
+            <input
+              type="file"
+              placeholder="Imagen"
+              onChange={(e) => manejarCambioArchivo(e)}
+              className={style.form__file}
+            />
+
+            <figure className={style.form__figure}>
+              {form.imagen
+                ? form.imagen.map((el, index) => (
+                  
+                    <img
+                      src={el.image}
+                      className={style.form__img}
+                      key={index}
+                    />
+                  ))
+                : null}
+            </figure>
           </form>
           <div>
             <button
