@@ -126,7 +126,13 @@ const Home = () => {
         </div>
 
         <div className={style.home__contac}>
-          <Link to={"http://localhost:5173/admin"} target="_blank">
+          <Link
+            //to={"http://localhost:5173/admin"}
+            to={
+              "https://tu-mascota-tienda-git-main-serna7a-gmailcom.vercel.app/admin"
+            }
+            target="_blank"
+          >
             <div>
               <img
                 src="http://res.cloudinary.com/dkw9ck7qv/image/upload/v1684753416/prueba/herramientas_znrbvd.png"
