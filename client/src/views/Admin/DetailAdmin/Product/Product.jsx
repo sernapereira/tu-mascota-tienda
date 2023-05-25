@@ -5,7 +5,7 @@ import style from "./Product.module.css";
 
 const Product = () => {
   const { dogs } = useSelector((state) => state.dogs);
-  console.log(dogs?.map((el, index) => el.imagen[0]));
+
 
   const dispatch = useDispatch();
 
@@ -26,8 +26,9 @@ const Product = () => {
               />
             </figure>
             <div className={style.product__text}>
-            <h3> Nombre: {el.name}</h3>
+            <h2> Nombre: {el.name}</h2>
             <h3>Raza: {el.raza}</h3>
+            <h2>Id: {el.id}</h2>
             </div>
             
           </div>

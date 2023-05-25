@@ -47,6 +47,9 @@
 
 .pagination__boton {
   margin: 1vh;
+  padding: 2vh 4vh;
+  border: none;
+  border-radius: 1vh;
 }
 
 @media screen and (max-width: 1309px) {

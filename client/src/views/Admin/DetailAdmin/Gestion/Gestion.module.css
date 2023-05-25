@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  transition: 1s;
+}
+
+/* ============================== bajar ======================== */
+
+.bajar {
+  margin: 2vh 0;
+  width: 70%;
+  height: auto;
+  /* outline: auto; */
+  text-align: center;
+  background-color: white;
+  border-radius: 2vh;
+  box-shadow: 0 0 45px rgba(0, 0, 0, 0.2);
+  transition: 1s;
+}
+.bajar__title {
+  width: 40%;
+  padding: 1vh 2vh;
+  border-radius: 1.5vh;
+  border-bottom: 2px solid rgb(250, 107, 5);
+  margin: 2vh auto;
+}
+
+.bajar__input {
+  outline: none;
+  margin: 4vh 0;
+  border: none;
+  width: 20%;
+  padding: 1vh 1vh;
+  background-color: rgba(255, 119, 0, 0.598);
+}
+
+.bajar__boton {
+  border: none;
+  padding: 2vh 4vh;
+  background-color: rgba(243, 28, 28, 0.672);
+  box-shadow: -1vh 2vh 25px rgba(0, 0, 0, 0.464);
+  border-radius: 2vh;
+  margin: 1vh 0 3vh;
+  cursor: pointer;
+  border-bottom: 2px solid rgb(237, 100, 3);
+  color: rgb(144, 0, 0);
+  transition: 0.4s;
+}
+
+.bajar__boton:hover {
+  padding: 2.3vh 9.3vh;
+  transition: 0.4s;
+}
+.bajar__boton:active {
+  padding: 2.7vh 10.3vh;
+  transition: 0.2s;
+}
+
+.bajar__noEncontrado {
+  color: red;
+  transition: 1s;
+}
+
+@media screen and (max-width: 1120px) {
+  .bajar__title {
+    width: 50%;
+    padding: 1vh 1vh;
+    font-size: 4vh;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .bajar__title {
+    width: 70%;
+    padding: 1vh 1vh;
+    font-size: 3vh;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .bajar__input {
+    width: 40%;
+  }
+  .bajar__noEncontrado {
+    font-size: 2vh;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .bajar__title {
+    width: 80%;
+    padding: 1vh 1vh;
+    font-size: 2.6vh;
+  }
+  .bajar__title2 {
+    font-size: 2vh;
+  }
+  .bajar__noEncontrado {
+    font-size: 1.6vh;
+  }
+}
+/* ================================= confirmar ======================== */
+
+.confirmar {
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 83, 83, 0.891);
+  padding: 4vh;
+  border-radius: 2vh;
+  border-bottom: 2px solid rgb(255, 107, 1);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  color: white;
+  transition: 1s;
+}
+
+.confirmar__boton {
+  border: none;
+  margin: 10vh 0 1vh;
+  box-shadow: -1vh 2vh 25px rgba(0, 0, 0, 0.464);
+  padding: 2vh 4vh;
+  border-radius: 1vh;
+  background-color: rgba(254, 44, 44, 0.891);
+  cursor: pointer;
+  border-bottom: 2px solid rgb(255, 244, 236);
+  transition: 0.4s;
+}
+
+.confirmar__boton:hover {
+  padding: 2.3vh 9.3vh;
+  transition: 0.4s;
+  margin: 10vh 0 0.7vh;
+}
+
+@media screen and (max-width: 1100px) {
+  .confirmar {
+    padding: 2vh;
+  }
+  .confirmar__title {
+    font-size: 2vh;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .confirmar {
+    width: 70%;
+  }
+  .confirmar__title {
+    font-size: 1.7vh;
+  }
+  .confirmar__boton {
+    margin: 5vh 0 1vh;
+    padding: 1.5vh 4.6vh;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .confirmar {
+    width: 80%;
+  }
+
+  .confirmar__boton {
+    margin: 5vh 0 1vh;
+    padding: 1.5vh 4.6vh;
+    margin: 3vh 0;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .confirmar {
+    width: 90%;
+    text-align: center;
+  }
+  .confirmar__title {
+    font-size: 1.7vh;
+  }
+  .confirmar__boton {
+    padding: 1vh 3.6vh;
+    margin: 3vh 0;
+  }
+}
+
+/* ============================ exito ============================= */
+
+.exito {
+  background-color: rgba(73, 215, 26, 0.723);
+  padding: 5vh 10vh;
+  border-radius: 2vh;
+  margin: 5vh 0 1vh;
+  color: rgb(255, 255, 255);
+  transition: 1s;
+}
+
+@media screen and (max-width: 500px) {
+  .exito {
+    padding: 5vh 8vh;
+    margin: 3vh 0 1vh;
+    font-size: 2vh;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .exito {
+    padding: 3vh 2vh;
+    margin: 3vh 0 1vh;
+
+    border-radius: 1vh;
+  }
+}
+
+@media screen and (max-width: 310px) {
+    .exito {
+      padding: 2vh 1vh;
+      margin: 2vh 0 1vh;
+      font-size: 1.7vh;
+      border-radius: 1vh;
+    }
+  }

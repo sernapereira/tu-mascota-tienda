@@ -38,10 +38,10 @@ const dogByIdController = async (id) => {
   let data = await dogBdd();
   data = data.find((el) => el.id == id);
 
-  if (data) {
-    return data;
+  if (!data) {
+    return { error: "producto no encontrado", codigo: 400 };
   } else {
-    throw Error("Prenda no encontrada");
+    return data;
   }
 };
 
@@ -95,7 +95,7 @@ const deletDogController = async (id) => {
     force: true,
   });
 
-  return ["Producto Borrado", borrado];
+  return { message: "Producto borrado", codigo: 200, borrado };
 };
 module.exports = {
   createDog,

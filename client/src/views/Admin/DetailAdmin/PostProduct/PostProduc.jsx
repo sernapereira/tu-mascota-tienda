@@ -1,105 +1,28 @@
 import { useEffect, useRef, useState } from "react";
 import style from "./PostProduc.module.css";
-import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { postDogAction } from "../../../../redux/Actions/dogActions";
-import { postDog } from "../../../../redux/slice/dogSlice";
-
-let cache = {};
-
-let uploadImage = async (file) => {
-  try {
-    if (cache.imag === file) {
-      return img.secure_url;
-    }
-    cache.imag = file;
-
-    let data = new FormData();
-
-    data.append("file", file);
-    data.append("upload_preset", "prueba");
-    data.append("api_key", "612353432275849");
-
-    const res = await fetch(
-      "https://api.cloudinary.com/v1_1/dkw9ck7qv/image/upload",
-      {
-        method: "POST",
-        body: data,
-      }
-    );
-
-    let img = await res.json();
-    console.log(img);
-    return img.secure_url;
-  } catch (error) {
-    console.log(error);
-  }
-};
+import { useError } from "./autenticación";
 
 //////////////////////////////////////////
 
-const initialForm = {
-  name: "",
-  edad: "",
-  color: "",
-  genero: "",
-  raza: "",
-  imagen: [],
-  tamano: "",
-};
-
 const PostProduct = () => {
   const dispatch = useDispatch();
-  const [form, setForm] = useState(initialForm);
-  const [statusco, setStatusco] = useState(false);
 
   const { post } = useSelector((state) => state.dogs);
-  console.log(post.status);
+
+  const {
+    form,
+    errors,
+    correct,
+    statusco,
+    handlerBlur,
+    changeHandler,
+    manejarCambioArchivo,
+    onSubmitHandler,
+  } = useError(post);
 
   //////////////////////////////////////////
-
-  const changeHandler = (event) => {
-    const property = event.target.name;
-    const value = event.target.value;
-
-    setForm({ ...form, [property]: value });
-  };
-
-  ///////////////////////////////////////////
-
-  const manejarCambioArchivo = async (evento) => {
-    const file = evento.target.files[0];
-    let image = await uploadImage(file);
-    setForm({
-      ...form,
-      imagen: [...form.imagen, { image }],
-    });
-  };
-
-  /////////////////////////////////////////
-
-  const onSubmitHandler = (event) => {
-    event.preventDefault();
-    dispatch(postDogAction(form));
-    setForm(initialForm);
-  };
-
-  useEffect(() => {
-    if (statusco) {
-      const cambiarEstadoDespuesDeTiempo = setTimeout(() => {
-        setStatusco(false);
-        dispatch(postDog({ status: 400 }));
-      }, 5000);
-
-      return () => clearTimeout(cambiarEstadoDespuesDeTiempo);
-    }
-  }, [statusco]);
-
-  useEffect(() => {
-    post.status === 201 ? setStatusco(true) : setStatusco(false);
-  });
-
-  console.log(statusco);
+  console.log(errors);
   return (
     <div className={style.container}>
       {!statusco ? (
@@ -116,14 +39,28 @@ const PostProduct = () => {
               placeholder="Nombre mascota"
               name="name"
               className={style.form__input}
+              onBlur={(e) => handlerBlur(e)}
             />
+            {errors.name && (
+              <h3 className={style.form__error}> {errors.name}</h3>
+            )}
+            {correct.name && (
+              <h3 className={style.form__corect}>{correct.name}</h3>
+            )}
             <input
               onChange={(e) => changeHandler(e)}
               type="number"
               placeholder="Meses de vida"
               name="edad"
               className={style.form__input}
+              onBlur={(e) => handlerBlur(e)}
             />
+            {errors.edad && (
+              <h3 className={style.form__error}> {errors.edad}</h3>
+            )}
+            {correct.edad && (
+              <h3 className={style.form__corect}>{correct.edad}</h3>
+            )}
 
             <input
               onChange={(e) => changeHandler(e)}
@@ -131,20 +68,36 @@ const PostProduct = () => {
               placeholder="Raza"
               name="raza"
               className={style.form__input}
+              onBlur={(e) => handlerBlur(e)}
             />
+            {errors.raza && (
+              <h3 className={style.form__error}> {errors.raza}</h3>
+            )}
+            {correct.raza && (
+              <h3 className={style.form__corect}>{correct.raza}</h3>
+            )}
             <input
               onChange={(e) => changeHandler(e)}
               type="text"
               placeholder="color"
               name="color"
               className={style.form__input}
+              onBlur={(e) => handlerBlur(e)}
             />
+            {errors.color && (
+              <h3 className={style.form__error}> {errors.color}</h3>
+            )}
+            {correct.color && (
+              <h3 className={style.form__corect}>{correct.color}</h3>
+            )}
 
             <div className={style.form__selectContainer}>
-              <div>
+              <div className={style.form__selectAll}>
                 <select
                   name="genero"
-                  onChange={(e) => changeHandler(e)}
+                  onChange={(e) => {
+                    changeHandler(e);
+                  }}
                   className={style.form__select}
                 >
                   <option value="">genero</option>
@@ -157,10 +110,12 @@ const PostProduct = () => {
                 </div>
               </div>
 
-              <div>
+              <div className={style.form__selectAll}>
                 <select
                   name="tamano"
-                  onChange={(e) => changeHandler(e)}
+                  onChange={(e) => {
+                    changeHandler(e);
+                  }}
                   className={style.form__select}
                 >
                   <option value="">Tamaño</option>
@@ -170,7 +125,7 @@ const PostProduct = () => {
                   <option value="grande">Grandes</option>
                 </select>
                 <div className={style.form__seelcionado}>
-                <h2>{form.tamano}</h2>
+                  <h2>{form.tamano}</h2>
                 </div>
               </div>
             </div>
@@ -180,12 +135,12 @@ const PostProduct = () => {
               placeholder="Imagen"
               onChange={(e) => manejarCambioArchivo(e)}
               className={style.form__file}
+              onBlur={(e) => handlerBlur(e)}
             />
 
             <figure className={style.form__figure}>
               {form.imagen
                 ? form.imagen.map((el, index) => (
-                  
                     <img
                       src={el.image}
                       className={style.form__img}
@@ -199,6 +154,14 @@ const PostProduct = () => {
             <button
               onClick={(e) => onSubmitHandler(e)}
               className={style.form__boton}
+              disabled={
+                form.name === "" ||
+                form.edad === "" ||
+                form.color === "" ||
+                form.raza === "" ||
+                form.imagen.length === 0 ||
+                form.tamano === ""
+              }
             >
               Subir Producuto
             </button>

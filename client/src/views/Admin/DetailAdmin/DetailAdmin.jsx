@@ -51,7 +51,7 @@ const DetailAdmin = () => {
             value="Gestion"
             className={style.nav__boton}
           >
-            Gestion
+            Bajar
           </button>
         </div>
       </div>

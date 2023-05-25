@@ -127,7 +127,7 @@ const Home = () => {
 
         <div className={style.home__contac}>
           <Link 
-          //to={"http://localhost:5173/admin"} 
+          // to={"http://localhost:5173/admin"} 
           to={"https://tu-mascota-tienda-git-main-serna7a-gmailcom.vercel.app/admin"}
           target="_blank"
           

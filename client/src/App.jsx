@@ -27,11 +27,11 @@ acceso && window.location.pathname === "/admin"
   : null;
 
 !acceso && window.location.pathname === "/admin/panel"
-  ? window.location.replace(
+  ? // ? window.location.replace("http://localhost:5173/admin")
+    window.location.replace(
       "https://tu-mascota-tienda-git-main-serna7a-gmailcom.vercel.app/admin"
     )
-  : // window.location.replace("http://localhost:5173/admin")
-    null;
+  : null;
 
 function App() {
   return (

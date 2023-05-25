@@ -1,5 +1,5 @@
 import axios from "axios";
-import { getDog, getDogById, postDog } from "../slice/dogSlice";
+import { deleDogSlice, getDog, getDogById, postDog } from "../slice/dogSlice";
 
 const getAllDog = () => async (dispatch) => {
   try {
@@ -25,7 +25,7 @@ const getDogByIdAction = (id) => async (dispatch) => {
 const postDogAction = (data) => async (dispatch) => {
   try {
     const json = await axios.post(`/dog`, data);
-   
+
     return dispatch(postDog(json.data));
   } catch (error) {
     console.log({ error: error.message });
@@ -33,4 +33,14 @@ const postDogAction = (data) => async (dispatch) => {
   }
 };
 
-export { getAllDog, getDogByIdAction, postDogAction };
+const deletDogAcrion = (data) => async (dispatch) => {
+  try {
+    const json = await axios.delete(`/dog/${Number(data)}`);
+    return dispatch(deleDogSlice(json.data));
+  } catch (error) {
+    console.log({ error: error.message });
+    alert(error);
+  }
+};
+
+export { getAllDog, getDogByIdAction, postDogAction, deletDogAcrion };
