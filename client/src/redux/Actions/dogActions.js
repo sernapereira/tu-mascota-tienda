@@ -33,7 +33,7 @@ const postDogAction = (data) => async (dispatch) => {
   }
 };
 
-const deletDogAcrion = (data) => async (dispatch) => {
+const deletDogAccion = (data) => async (dispatch) => {
   try {
     const json = await axios.delete(`/dog/${Number(data)}`);
     return dispatch(deleDogSlice(json.data));
@@ -43,4 +43,4 @@ const deletDogAcrion = (data) => async (dispatch) => {
   }
 };
 
-export { getAllDog, getDogByIdAction, postDogAction, deletDogAcrion };
+export { getAllDog, getDogByIdAction, deletDogAccion, postDogAction };
